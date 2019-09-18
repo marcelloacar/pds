@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "pds": {
+    "angular-bulma": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/pds",
+            "outputPath": "dist/angular-bulma",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -23,6 +23,7 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bulma/css/bulma.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -50,18 +51,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "pds:build"
+            "browserTarget": "angular-bulma:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "pds:build:production"
+              "browserTarget": "angular-bulma:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "pds:build"
+            "browserTarget": "angular-bulma:build"
           }
         },
         "test": {
@@ -95,7 +96,7 @@
         }
       }
     },
-    "pds-e2e": {
+    "angular-bulma-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -103,11 +104,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "pds:serve"
+            "devServerTarget": "angular-bulma:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "pds:serve:production"
+              "devServerTarget": "angular-bulma:serve:production"
             }
           }
         },
@@ -123,5 +124,5 @@
       }
     }
   },
-  "defaultProject": "pds"
+  "defaultProject": "angular-bulma"
 }
