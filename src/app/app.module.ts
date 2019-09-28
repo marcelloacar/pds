@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
 import { SearchComponent } from './search/search.component';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MenusComponent,
-    SearchComponent
+    SearchComponent,
+    CadastroComponent
   ],
   imports: [
     BrowserModule,
