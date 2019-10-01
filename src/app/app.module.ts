@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { RodasComponent } from './produtos/rodas/rodas.component';
 import { PneusComponent } from './produtos/pneus/pneus.component';
+import { AcessoriosComponent } from './produtos/acessorios/acessorios.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { PneusComponent } from './produtos/pneus/pneus.component';
     SearchComponent,
     CadastroComponent,
     RodasComponent,
-    PneusComponent
+    PneusComponent,
+    AcessoriosComponent
   ],
   imports: [
     BrowserModule,
