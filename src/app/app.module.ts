@@ -8,8 +8,8 @@ import { HeaderComponent } from './header/header.component';
 import { MenusComponent } from './menus/menus.component';
 import { SearchComponent } from './search/search.component';
 import { CadastroComponent } from './cadastro/cadastro.component';
-import { RodasComponent } from './rodas/rodas.component';
-import { PneusComponent } from './pneus/pneus.component';
+import { RodasComponent } from './produtos/rodas/rodas.component';
+import { PneusComponent } from './produtos/pneus/pneus.component';
 
 @NgModule({
   declarations: [
