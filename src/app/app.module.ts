@@ -11,6 +11,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { RodasComponent } from './produtos/rodas/rodas.component';
 import { PneusComponent } from './produtos/pneus/pneus.component';
 import { AcessoriosComponent } from './produtos/acessorios/acessorios.component';
+import { PostagemComponent } from './postagem/postagem.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AcessoriosComponent } from './produtos/acessorios/acessorios.component'
     CadastroComponent,
     RodasComponent,
     PneusComponent,
-    AcessoriosComponent
+    AcessoriosComponent,
+    PostagemComponent
   ],
   imports: [
     BrowserModule,

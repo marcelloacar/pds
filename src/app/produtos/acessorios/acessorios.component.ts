@@ -11,5 +11,9 @@ export class AcessoriosComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  id: number;
+  descricao: string;
+  preco: number;
+  tipo: string;
+  marca: string;
 }
