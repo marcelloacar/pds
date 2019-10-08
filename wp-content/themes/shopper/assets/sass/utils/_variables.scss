@@ -1,0 +1,47 @@
+// Some common variables and mixins to get you started.
+// Variables allow you to re-use colors, sizes, and other values without repeating
+// yourself. This means that changes that should be small, such as tweaking the
+// coloring or the sizing, can be done in one place, not all over the stylesheet.
+
+$base-font: 		"Lato", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$header-font: 		$base-font;
+$ms-base:           1em, .875em, .750em;
+$ms-ratio:          1.618;
+
+
+// base color scheme
+$color_white:		#ffffff;
+$body-background: 	$color_white;
+
+$color_body: 		#333333;
+$color_links: 		#067ab4;
+$color_gray40:		#666666;
+$color_whitesmoke:	#f5f5f5;
+$color_gray30:		#cccccc;
+
+$color_border:		#eeeeee;
+
+$color_woocommerce: #ff6600;
+$color_woocommerce_hover: #e64d00;
+
+$error: 			#e2401c;
+$success: 			#0f834d;
+$info: 				#3D9CD2;
+
+
+// layout sizes
+$desktop:			768px;
+$handheld:			767px;
+$container-width:	67.141em;
+
+$susy: (
+	columns: 12,
+	gutters: 1,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+
+	use-custom: (
+		box-sizing: false
+	)
+);
