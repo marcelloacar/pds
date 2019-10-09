@@ -467,8 +467,8 @@ if ( ! function_exists( 'shopper_credit' ) ) {
 	function shopper_credit() {
 		?>
 		<div class="site-info">			
-			<?php echo esc_html( apply_filters( 'shopper_copyright_text', $content = '' . get_bloginfo( 'name' ) . ' &copy;' . date( 'Y' ) ) ); ?>.
-			<?php if ( apply_filters( 'shopper_credit_link', true ) ) { ?>
+			<?php echo esc_html( apply_filters( 'shopper_copyright_text', $content = '' . get_bloginfo( 'name' ) . ' &copy;' . date( 'Y' ) ) ); ?>. <span class="phone"> Telefone: (11) 2341-0033</span>
+			<?php if ( apply_filters( 'shopper_credit_link', true )  && false ) { ?>
 				<?php printf( esc_attr__( ' %1$s Designed by %2$s.', 'shopper' ), '<a href="https://alltopstuffs.com" title="Shopper" target="_blank">Shopper</a>', '<a href="https://shopperwp.io" title="Shopper - The Best Free WooCommerce for WordPress" rel="author">ShopperWP</a>' ); ?>
 			<?php } ?>
 
