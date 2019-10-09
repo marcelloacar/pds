@@ -32,6 +32,7 @@ if ( ! class_exists( 'Shopper' ) ) :
 
 			// After WooCommerce.
 			add_filter( 'body_class',                 array( $this, 'body_classes' ) );
+			
 			add_filter( 'the_content_more_link', 	  array( $this, 'modify_read_more_link' ) );
 
 			//add_filter( 'wp_page_menu_args',          array( $this, 'page_menu_args' ) );
@@ -86,8 +87,8 @@ if ( ! class_exists( 'Shopper' ) ) :
 			 * Enable support for site logo
 			 */
 			add_theme_support( 'custom-logo', array(
-				'height'      => 160,
-				'width'       => 460,
+				'width'       => 210,
+				'height'      => 73,				
 				'flex-width'  => false,
 				'flex-height'  => false,
 			) );
@@ -152,6 +153,11 @@ if ( ! class_exists( 'Shopper' ) ) :
 				'name'        => __( 'Below Header', 'shopper' ),
 				'id'          => 'header-1',
 				'description' => __( 'Widgets added to this region will appear beneath the header and above the main content.', 'shopper' ),
+			);
+			$sidebar_args['primary'] = array(
+				'name'        => __( 'Primary Widget', 'shopper' ),
+				'id'          => 'primary-1',
+				'description' => __( 'Widgets added to this region will appear on the right primary navigation bar.', 'shopper' ),
 			);
 
 			$sidebar_args['shop'] = array(

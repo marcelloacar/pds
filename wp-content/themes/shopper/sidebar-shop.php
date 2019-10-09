@@ -12,6 +12,6 @@ if ( ! is_active_sidebar( 'shop-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area" role="complementary">
+<aside id="secondary" class="<?php echo esc_attr(apply_filters('shopper_widget_area_class', 'widget-area')) ?>" role="complementary">
 	<?php dynamic_sidebar( 'shop-1' ); ?>
 </aside><!-- #secondary -->

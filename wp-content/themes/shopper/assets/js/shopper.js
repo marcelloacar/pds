@@ -8,7 +8,6 @@
 			//this.slickity('.shopper-recent-products .products', '.product');
 			this.cattoggle();
 			this.scrollTop();
-			this.setheight();
 			this.searchform();
 			this.quantity();
 			this.updatedQuantity();
@@ -39,12 +38,12 @@
 				}
 			}
 			$first_menu.clone().attr('class', 'mobile-menu').wrap('<div id="mobile-menu-wrapper" class="mobile-only"></div>').parent().hide().appendTo('body');
-			
+
 			// Add items from the other menu
 			if ($second_menu.length) {
 				$second_menu.find('ul.menu').clone().appendTo('.mobile-menu');
 			}
-			
+
 			$('.menu-toggle').click(function(e) {
 				e.preventDefault();
 				e.stopPropagation();
@@ -79,8 +78,14 @@
 				}
 			});
 
+			// Add primary widget
+			this.primaryWidget();
 		},
 
+		primaryWidget: function() {
+			var pw = jQuery('#primary-widget-region');
+			pw.clone().appendTo('.mobile-menu');
+		},
 		slideUpDown: function(btnClick, idClass) {
 			jQuery(btnClick).on('click', function() {
 				var hasActive = jQuery(idClass).hasClass('active');
@@ -162,7 +167,7 @@
 					} else {
 						jQuery(this).parent('li').removeClass('active');
 					}
-				});			
+				});
 		},
 
 		scrollTop : function() {
@@ -178,14 +183,6 @@
 				} else {
 					jQuery('.back-to-top').fadeIn();
 				}
-			});
-		},
-		
-		setheight: function() {
-			$('.products .product').each(function(index, el) {
-				var img = jQuery(el).find('img.wp-post-image');
-				var  addCartTop = jQuery(img).height();
-				jQuery(el).find('.loop-addtocart-btn-wrapper').css('top', addCartTop);
 			});
 		},
 
@@ -248,7 +245,7 @@
     	updatedQuantity: function() {
 
     		// Trigger event updated_wc_div
-			jQuery( document.body ).on( 'updated_wc_div', function() { 
+			jQuery( document.body ).on( 'updated_wc_div', function() {
 
 				// Call quantity (+) & (-) again
 				ShopperJS.quantity();
@@ -284,6 +281,7 @@
 
 	});
 
+
 	jQuery(window).resize(function() {
 		var windowW = jQuery(window).width();
 
@@ -295,5 +293,18 @@
 		ShopperJS.calVerticalHeight();
 
 	});
+
+
+	jQuery( window ).load(function() {
+
+			$('.products .product').each(function(index, el) {
+				var img = jQuery(el).find('img.size-woocommerce_thumbnail');
+				var  addCartTop = jQuery(img).height();
+				jQuery(el).find('.loop-addtocart-btn-wrapper').css('top', addCartTop);
+			});
+	});
+
+
+
 
 })(jQuery);

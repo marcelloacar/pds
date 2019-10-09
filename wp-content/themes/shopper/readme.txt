@@ -66,3 +66,13 @@ Image:
 https://pixabay.com/en/girl-shopping-toys-model-fashion-2184000/
 License:      	CC0 Public Domain
 License URI:  	https://creativecommons.org/publicdomain/zero/1.0/deed.en
+
+== Changelog ==
+= 1.3.3 - 2018-08-27 =
+* Fix - Warning: count(): Parameter must be an array or an object that implements Countable in PHP 7.2
+* Fix - Footer menu and copyright aligment 
+* Feature - Add widget on right of Primary Menu Nav
+* Fix - Style button for mobile
+
+= 1.0.0 - 2017-04-21 =
+* Initial release

@@ -1,0 +1,9 @@
+{
+	"version": 3,
+	"file": "customizer.css",
+	"sources": [
+		"customizer.scss"
+	],
+	"names": [],
+	"mappings": "AAAA,AAAA,gCAAgC,CAAC;EAChC,UAAU,EAAE,OAAO;EACnB,KAAK,EAAE,OAAO;EACd,MAAM,EAAE,iBAAiB,GACzB"
+}

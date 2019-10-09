@@ -14,6 +14,15 @@ if ( ! function_exists( 'shopper_is_woocommerce_activated' ) ) {
 	}
 }
 
+if ( ! function_exists( 'shopper_pro_is_activated' ) ) {
+
+	function shopper_pro_is_activated() {
+
+		return class_exists( 'Shopper_Pro' ) ? true : false;
+	}
+
+}
+
 /**
  * Checks if the current page is a product archive
  *
@@ -194,9 +203,12 @@ function shopper_homepage_control_get_hooks() {
 
 	$response = array();
 
-	if ( isset( $wp_filter['shopper_homepage'] ) && 0 < count( $wp_filter['shopper_homepage'] ) ) {
+	if ( isset( $wp_filter['shopper_homepage'] ) ) {
+		
+		$_hp = $wp_filter['shopper_homepage'];
 
-		foreach ( $wp_filter['shopper_homepage'] as $k => $v ) {
+		foreach ( $_hp as $k => $v ) {
+			
 			if ( is_array( $v ) ) {
 				foreach ( $v as $i => $j ) {
 					if ( is_array( $j['function'] ) ) {
@@ -215,7 +227,7 @@ function shopper_homepage_control_get_hooks() {
 
 /**
  * Format hook title
- * 
+ *
  * @param  string
  * @since  1.0.0
  * @return string
@@ -232,7 +244,7 @@ function shopper_homepage_control_format_title ( $key ) {
 
 /**
  * Default homepage function hookeds
- * 
+ *
  * @since  1.0.0
  * @return string
  */
@@ -251,14 +263,13 @@ function shopper_homepage_control_format_defaults () {
 		}
 
 		return $defaults;
-		//return join( ',', $defaults );
 }
 
 /**
  * Sanitize homepage control
  *
  * @since 1.0.0
- * 
+ *
  */
 function shopper_homepage_contro_sanitize ( $values ) {
 

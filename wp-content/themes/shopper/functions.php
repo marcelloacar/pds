@@ -27,22 +27,29 @@ $shopper = (object) array(
 	/**
 	 * Initialize all the things.
 	 */
-	'main'       => require 'inc/class-shopper.php',
-	'customizer' => require 'inc/customizer/class-shopper-customizer.php',
+	'main'       => require_once 'inc/class-shopper.php',
+	'customizer' => require_once 'inc/customizer/class-shopper-customizer.php',
 );
 
 
-require 'inc/shopper-functions.php';
-require 'inc/shopper-template-hooks.php';
-require 'inc/shopper-template-functions.php';
+require_once 'inc/shopper-functions.php';
+require_once 'inc/shopper-template-hooks.php';
+require_once 'inc/shopper-template-functions.php';
+require_once 'inc/customizer/include-kirki.php';
+require_once  'inc/customizer/class-shopper-pro-kirki.php';
+
+if ( is_admin() ) {
+	
+	$shopper->admin = require 'inc/admin/class-shopper-admin.php';
+}
 
 /**
  * All for WooCommerce functions
  */
 if ( shopper_is_woocommerce_activated() ) {
 	
-	$shopper->woocommerce = require 'inc/woocommerce/class-shopper-woocommerce.php';
+	$shopper->woocommerce = require_once 'inc/woocommerce/class-shopper-woocommerce.php';
 
-	require 'inc/woocommerce/shopper-wc-template-hooks.php';
-	require 'inc/woocommerce/shopper-wc-template-functions.php';
+	require_once 'inc/woocommerce/shopper-wc-template-hooks.php';
+	require_once 'inc/woocommerce/shopper-wc-template-functions.php';
 }

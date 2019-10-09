@@ -2,7 +2,7 @@
 /**
  * Shopper Customizer Class
  *
- * 
+ *
  * @package  Shopper
  * @author   WooThemes
  * @author   ShopperWP
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 		 */
 		public function __construct() {
 			add_action( 'customize_register',              array( $this, 'customize_register' ), 10 );
-			add_filter( 'body_class',                      array( $this, 'layout_class' ) );
+			add_filter( 'body_class',                      array( $this, 'layout_class' ), 40 );
 			add_action( 'wp_enqueue_scripts',              array( $this, 'add_customizer_css' ), 130 );
 			add_action( 'after_setup_theme',               array( $this, 'custom_header_setup' ) );
 			add_action( 'customize_controls_print_styles', array( $this, 'customizer_custom_control_css' ) );
@@ -47,7 +47,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 				$layout = get_theme_mod( 'shopper_layout' );
 				if ( $layout === 'none' ) {
 					add_action( '', array( $this, 'remove_sidebars' ) );
-					
+
 				}
 			}
 		}
@@ -60,7 +60,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 		 */
 		public static function get_shopper_default_setting_values() {
 			return apply_filters( 'shopper_setting_default_values', $args = array(
-				
+
 				'shopper_heading_color'                      => '#484c51',
 				'shopper_text_color'                         => '#43454b',
 				'shopper_accent_color'                       => '#ff6600',
@@ -83,7 +83,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 
 		/**
 		 * Adds a value to each shopper setting if one isn't already present.
-		 * 
+		 *
 		 * @since 1.0.0
 		 * @uses get_shopper_default_setting_values()
 		 */
@@ -323,9 +323,10 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 			 */
 			if ( shopper_is_woocommerce_activated() ) {
 				$wp_customize->add_section( 'shopper_homepage_banner' , array(
-					'title'      			=> __( 'Home Page', 'shopper' ),
+					'title'      			=> __( 'Shopper Homepage', 'shopper' ),
 					'priority'   			=> 27,
 				) );
+
 
 				$wp_customize->add_setting(
 			        'shopper_homepage_control',
@@ -506,7 +507,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 				'section'				=> 'shopper_layout',
 				'label'					=> __( 'General Layout', 'shopper' ),
 				'priority'				=> 1,
-				'choices'				=> array(											
+				'choices'				=> array(
 											'left'  => get_template_directory_uri() . '/assets/images/customizer/controls/col-2cr.png',
 											'none'  => get_template_directory_uri() . '/assets/images/customizer/controls/col-1cl.png',
 											'right' => get_template_directory_uri() . '/assets/images/customizer/controls/col-2cl.png',
@@ -534,11 +535,31 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 					'priority' 			=> 1,
 				) ) );
 			}
+
+			// Remove control hooks
+			$this->_remove_controls( $wp_customize );
+		}
+
+		/**
+		 * Hook to remove some controls
+		 *
+		 * @param  WP_Customize
+		 * @return void
+		 */
+		private function _remove_controls( $wp_customize ) {
+
+			$controls = apply_filters('shopper_remove_customize_control', array() );
+
+			foreach ($controls as $control ) {
+
+				$wp_customize->remove_control($control);
+
+			}
 		}
 
 		/**
 		 * Get all of the shopper theme mods.
-		 * 
+		 *
 		 *@since 1.0.0
 		 * @return array $shopper_theme_mods The shopper Theme Mods.
 		 */
@@ -609,8 +630,8 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 				background-color: ' . shopper_adjust_color_brightness( $shopper_theme_mods['background_color'], -4 ) . ';
 			}
 
-			.site-header,			
-			.main-navigation ul.menu > li.menu-item-has-children:after,			
+			.site-header,
+			.main-navigation ul.menu > li.menu-item-has-children:after,
 			.shopper-handheld-footer-bar,
 			.shopper-handheld-footer-bar ul li > a,
 			.shopper-handheld-footer-bar ul li.search .site-search {
@@ -646,7 +667,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 				border-bottom-color: ' . $shopper_theme_mods['heading_color'] . ';
 			}
 
-			body,			
+			body,
 			.page-numbers li .page-numbers:not(.current),
 			.page-numbers li .page-numbers:not(.current) {
 				color: ' . $shopper_theme_mods['text_color'] . ';
@@ -659,8 +680,11 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 			}
 			.site-main nav.navigation .nav-previous a, .widget_nav_menu ul.menu li.current-menu-item > a, .widget ul li.current-cat-ancestor > a, .widget_nav_menu ul.menu li.current-menu-ancestor > a, .site-main nav.navigation .nav-next a, .widget ul li.current-cat > a, .widget ul li.current-cat-parent > a, a  {
 				color: ' . $shopper_theme_mods['accent_color'] . ';
-			}			
-			button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button, .site-header-cart .widget_shopping_cart a.button, .back-to-top, .page-numbers li .page-numbers:hover {
+			}
+			button, input[type="button"], input[type="reset"], input[type="submit"], .button, .widget a.button, .site-header-cart .widget_shopping_cart a.button, .back-to-top, .page-numbers li .page-numbers:hover,
+				.shopper-hero-box .hero-box-wrap.owl-carousel .owl-controls .owl-next,
+				.shopper-hero-box .hero-box-wrap.owl-carousel .owl-controls .owl-prev
+			 {
 				background-color: ' . $shopper_theme_mods['button_background_color'] . ';
 				border-color: ' . $shopper_theme_mods['button_background_color'] . ';
 				color: ' . $shopper_theme_mods['button_text_color'] . ';
@@ -694,7 +718,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 			.footer-widgets {
 				background-color: ' . $shopper_theme_mods['widget_footer_background_color'] . ';
 			}
-			
+
 			.footer-widgets .widget-title {
 				color: ' . $shopper_theme_mods['footer_heading_color'] . ';
 			}
@@ -746,7 +770,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 				.main-navigation ul.nav-menu ul.children {
 					background-color: ' . shopper_adjust_color_brightness( $shopper_theme_mods['header_background_color'], -8 ) . ';
 				}
-			
+
 			}';
 
 			return apply_filters( 'shopper_customizer_css', $styles );
@@ -788,7 +812,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 			a.woocommerce-review-link,
 			.product_meta a {
 				color: ' . shopper_adjust_color_brightness( $shopper_theme_mods['text_color'], 50 ) . ';
-			}			
+			}
 
 			.star-rating span:before,
 			.quantity .plus, .quantity .minus,
@@ -917,7 +941,7 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 		 * @since  1.0.0
 		 */
 		public function layout_class( $classes ) {
-			
+
 			$left_or_right = get_theme_mod( 'shopper_layout' );
 
 			$classes[] = $left_or_right . '-sidebar';
@@ -981,11 +1005,11 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 		}
 
 		/**
-		 * 
+		 *
 		 */
 		public function customizer_custom_control_js() {
 
-			
+
 		}
 		/**
 		 * Get site logo.
@@ -1046,12 +1070,18 @@ if ( ! class_exists( 'Shopper_Customizer' ) ) :
 			}
 
 			$options = get_theme_mod( 'shopper_homepage_control' );
+
+
+			// Use pro options if it is available
+			if ( function_exists ('shopper_pro_get_homepage_hooks') ) {
+
+				$options = shopper_pro_get_homepage_hooks();
+			}
+
 			$components = array();
 
-
-
 			if ( isset( $options ) && '' != $options ) {
-			
+
 				$components = $options ;
 
 				// Remove all existing actions on shopper_homepage.

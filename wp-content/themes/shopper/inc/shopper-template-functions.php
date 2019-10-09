@@ -4,6 +4,14 @@
  *
  * @package shopper
  */
+
+function add_image_class($class){
+    $class .= ' additional-class';
+    return $class;
+}
+add_filter('get_image_tag_class','add_image_class');
+
+
 if ( ! function_exists( 'shopper_display_comments' ) ) {
 	/**
 	 * shopper display comments
@@ -147,6 +155,24 @@ if ( ! function_exists( 'shopper_primary_navigation' ) ) {
 			?>
 		</nav><!-- #site-navigation -->
 		<?php
+	}
+}
+
+if ( ! function_exists( 'shopper_widget_primary_nav' ) ) {
+	/**
+	 * Render widget on the primary navigation
+	 *
+	 * @since 1.3.2
+	 * @return void
+	 */
+	function shopper_widget_primary_nav() {
+		if ( is_active_sidebar( 'primary-1' ) ) {
+		?>
+		<div id="primary-widget-region" class="primary-widget-region">
+				<?php dynamic_sidebar( 'primary-1' ); ?>
+		</div>
+		<?php
+		}
 	}
 }
 
@@ -440,26 +466,40 @@ if ( ! function_exists( 'shopper_credit' ) ) {
 	 */
 	function shopper_credit() {
 		?>
-		<div class="site-info">
-			<?php if ( has_nav_menu( 'footer' ) ) : ?>
-			<div class="footer-menu">
-				<?php
-					wp_nav_menu( array(
-						'theme_location'	=> 'footer',
-						'container_class'	=> 'footer-navigation',
-					));
-				?>
-			</div>
-			<?php endif; ?>
+		<div class="site-info">			
 			<?php echo esc_html( apply_filters( 'shopper_copyright_text', $content = '' . get_bloginfo( 'name' ) . ' &copy;' . date( 'Y' ) ) ); ?>.
 			<?php if ( apply_filters( 'shopper_credit_link', true ) ) { ?>
-				<?php printf( esc_attr__( ' %1$s Designed by %2$s.', 'shopper' ), 'Shopper', '<a href="https://shopperwp.com" title="Shopper - The Best Free WooCommerce for WordPress" rel="author">ShopperWP</a>' ); ?>
+				<?php printf( esc_attr__( ' %1$s Designed by %2$s.', 'shopper' ), '<a href="https://alltopstuffs.com" title="Shopper" target="_blank">Shopper</a>', '<a href="https://shopperwp.io" title="Shopper - The Best Free WooCommerce for WordPress" rel="author">ShopperWP</a>' ); ?>
 			<?php } ?>
 
 			
 		</div><!-- .site-info -->
 		<?php
 	}
+}
+
+if ( ! function_exists( 'shopper_footer_menu' ) ) {
+
+	/**
+	 * Display Footer Menu
+	 *
+	 * @since  1.0.0
+	 */
+
+	function shopper_footer_menu() {
+
+		if ( has_nav_menu( 'footer' ) ) : ?>
+			<?php
+				wp_nav_menu( array(
+					'theme_location'	=> 'footer',
+					'container_class'	=> 'footer-menu',
+				));
+			?>
+			<?php endif;
+
+	}
+
+
 }
 
 if ( ! function_exists( 'shopper_backtotop ') ) {
@@ -509,6 +549,9 @@ if ( ! function_exists( 'shopper_post_content' ) ) {
 		<div class="entry-content">
 		<?php
 
+		$size = apply_filters('shopper_thunmbnail_size', 'large');
+		$shopper_display_excerpt = apply_filters('shopper_display_excerpt', true);
+
 		/**
 		 * Functions hooked in to shopper_post_content_before action.
 		 *
@@ -516,17 +559,22 @@ if ( ! function_exists( 'shopper_post_content' ) ) {
 		 */
 		do_action( 'shopper_post_content_before' );
 
-		if ( is_search() ) {
+
+
+		if ( ($shopper_display_excerpt) && ( is_search() || is_archive() || is_front_page() || is_home() )  ) {
 
 			the_excerpt();
 
-			//echo apply_filters('shopper_excerpt_more_link', '<a href="'. esc_url( get_permalink() ) .'"  title="'. get_the_title() .'" class="more-link">'. __( 'Continue Reading ...', 'shopper' ) .'</a>');
 
 		} else {
 
-			the_content();
+			the_content( sprintf(
+				/* translators: %s: Name of current post. */
+				wp_kses( __( 'Continue Reading %s <span class="meta-nav">&rarr;</span>', 'shopper' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
 
-		}		
+			) );
+		}
 
 		do_action( 'shopper_post_content_after' );
 
@@ -547,6 +595,9 @@ if ( ! function_exists( 'shopper_footer_meta' ) ) {
 	 * @since 1.0.0
 	 */
 	function shopper_footer_meta() {
+
+		if ( 'post' == get_post_type() ) : 
+
 		?>
 		<div class="entry-footer">
 
@@ -555,9 +606,11 @@ if ( ! function_exists( 'shopper_footer_meta' ) ) {
 			if ( is_single() ) {
 
 				shopper_posted_on();
+
 			} else {
 
 				if ( 'post' == get_post_type() ) {
+
 					shopper_posted_on();
 				}
 			}
@@ -574,6 +627,10 @@ if ( ! function_exists( 'shopper_footer_meta' ) ) {
 		</div>
 
 	<?php
+
+	endif; 
+
+
 	}
 }
 
@@ -723,7 +780,13 @@ if ( ! function_exists( 'shopper_get_sidebar' ) ) {
 	 * @since 1.0.0
 	 */
 	function shopper_get_sidebar() {
-		get_sidebar();
+
+		$enable_sidebar = apply_filters( 'shopper_enable_sidebar', true);
+
+		if ( $enable_sidebar ) {
+
+			get_sidebar();
+		}
 	}
 }
 
@@ -749,7 +812,7 @@ if ( ! function_exists( 'shopper_post_thumbnail' ) ) {
 
 			</div>
 
-				<?php
+			<?php
 
 		}
 	}

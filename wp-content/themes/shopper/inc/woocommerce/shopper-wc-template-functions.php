@@ -58,8 +58,15 @@ if ( ! function_exists( 'shopper_after_content' ) ) {
 if ( ! function_exists( 'shopper_shop_sidebar' ) ) {
 
 	function shopper_shop_sidebar() {
-		
-		get_sidebar('shop');
+
+
+		$enable_sidebar = apply_filters('shopper_enable_shop_sidebar', true);
+
+		if ( $enable_sidebar ) {
+
+			get_sidebar('shop');
+			
+		}
 
 	}
 }
@@ -97,7 +104,7 @@ if ( ! function_exists( 'shopper_cart_link' ) ) {
 	 */
 	function shopper_cart_link( $isCart = true ) {
 		?>
-			<a class="cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'shopper' ); ?>">
+			<a class="cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'shopper' ); ?>">
 				<?php if ($isCart) : ?>
 				<span class="label-cart"><?php _e('Cart', 'shopper') ?> / </span> 
 				<?php endif ?>
@@ -145,7 +152,7 @@ if ( ! function_exists( 'shopper_custom_product_search' ) ) {
 			<div class="custom-product-search">
 				<form role="search" method="get" class="shopper-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<div class="nav-left">
-						<div class="nav-search-facade" data-value="search-alias=aps"><span class="nav-search-label">All</span> <i class="fa fa-angle-down"></i></div>			
+						<div class="nav-search-facade" data-value="search-alias=aps"><span class="nav-search-label"><?php _e( 'All', 'shopper' ); ?></span> <i class="fa fa-angle-down"></i></div>			
 						<?php
 							echo shopper_product_cat_select('indent_sub');
 						?>
@@ -349,10 +356,27 @@ if ( ! function_exists( 'shopper_sorting_wrapper' ) ) {
 	 * @return  void
 	 */
 	function shopper_sorting_wrapper() {
-		echo '<div class="shopper-sorting">';
+
+		$product_nav_pos = esc_attr(apply_filters('shopper_product_nav_pos', 'shopper-nav-pos-right'));
+
+		echo '<div class="shopper-sorting '. $product_nav_pos .'">';
 	}
 }
 
+if ( ! function_exists( 'shopper_footer_sorting_wrapper' ) ) {
+	/**
+	 * Sorting wrapper
+	 *
+	 * @since   1.2.3
+	 * @return  void
+	 */
+	function shopper_footer_sorting_wrapper() {
+		
+		$product_nav_pos = esc_attr(apply_filters('shopper_footer_product_nav_pos', 'shopper-nav-pos-right'));
+
+		echo '<div class="shopper-sorting '. $product_nav_pos .'">';
+	}
+}
 if ( ! function_exists( 'shopper_sorting_wrapper_close' ) ) {
 	/**
 	 * Sorting wrapper close
@@ -370,8 +394,9 @@ if ( ! function_exists( 'shopper_product_wrapper' )) {
 	function shopper_product_wrapper () {
 
 		$items = apply_filters( 'loop_shop_columns', 3);
+		$display_style = apply_filters( 'shopper_display_style', 'product-grid');
 
-		printf('<div class="columns-%d">', $items);
+		printf('<div class="columns-%d %s">', $items, $display_style);
 	}
 }
 
@@ -383,6 +408,119 @@ if ( ! function_exists( 'shopper_product_wrapper_close' )) {
 	}
 }
 
+if ( ! function_exists( 'shopper_product_gallery_wrapper' ) ) {
+
+	function shopper_product_gallery_wrapper() {
+		
+		$display_style = apply_filters( 'shopper_display_gallery_layout_style', 'product-normal');
+
+		printf('<div class="%s">', $display_style );
+
+
+	}
+}
+
+if ( ! function_exists( 'shopper_product_gallery_wrapper_close' )) {
+
+	function shopper_product_gallery_wrapper_close () {
+		
+		echo '</div>';
+	}
+}
+
+
+if ( !function_exists( 'shopper_single_product_summary_custom_wrapper' )) {
+
+	function shopper_single_product_summary_custom_wrapper() {
+
+		$display_style = apply_filters( 'shopper_display_align_summary_text', 'text-left');
+
+		printf('<div class="%s">', $display_style );
+
+
+	}
+}
+
+if ( ! function_exists( 'shopper_single_product_summary_custom_wrapper_close' )) {
+
+	function shopper_single_product_summary_custom_wrapper_close() {
+		
+		echo '</div>';
+	}
+}
+
+
+if ( !function_exists( 'shopper_single_product_diplay_tabs_wrapper' )) {
+
+	function shopper_single_product_diplay_tabs_wrapper() {
+
+		$display_style = apply_filters( 'shopper_display_display_tabs_style', 'vertical-tab');
+
+		$tab_align = apply_filters( 'shopper_display_display_tabs_align', 'nav-right');
+
+		printf('<div class="%s %s">', $tab_align, $display_style);
+
+	}
+}
+
+if ( ! function_exists( 'shopper_template_single_meta' ) ) {
+
+	function shopper_template_single_meta() {
+
+		$enable_cat = apply_filters( 'shopper_product_page_diplay_cateory', '1' );
+
+		if ( $enable_cat ) {
+			woocommerce_template_single_meta();
+		}
+	}
+}
+
+if ( ! function_exists( 'shopper_cart_sidebar_content' )) {
+
+	function shopper_cart_sidebar_content() {
+
+		$content = apply_filters( 'shopper_cart_sidebar_content', '');
+
+		if ( $content ) {
+
+			printf( '<div class="cart-sidebar-content">'.  $content . "</div>");
+
+		}
+
+	}
+}
+
+if ( ! function_exists( 'shopper_cart_after_sidebar_content ')) {
+
+	function shopper_cart_after_sidebar_content() {
+
+		$content = apply_filters('shopper_cart_after_sidebar_content', '');
+
+		if ( $content ) {
+
+			printf( '<div class="after-cart-content">'.  $content . "</div>");
+
+		}
+
+	}
+}
+
+
+if ( ! function_exists( 'shopper_checkout_sidebar_content' ) ) {
+
+	function shopper_checkout_sidebar_content() { 
+
+		$content = apply_filters('shopper_checkout_sidebar_content', '');
+
+		if ( $content ) {
+
+			printf( '<div class="checkout-sidebar-content">'.  $content . "</div>");
+
+		}
+	}
+
+
+}
 
 if ( ! function_exists( 'shopper_shop_messages' ) ) {
 	/**
@@ -531,7 +669,7 @@ if ( ! function_exists( 'shopper_handheld_footer_bar_cart_link' ) ) {
 	 */
 	function shopper_handheld_footer_bar_cart_link() {
 		?>
-			<a class="footer-cart-contents" href="<?php echo esc_url( WC()->cart->get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'shopper' ); ?>">
+			<a class="footer-cart-contents" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'shopper' ); ?>">
 				<span class="count"><?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
 			</a>
 		<?php

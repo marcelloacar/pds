@@ -441,15 +441,38 @@ ul.products {
   .single-product div.product .price {
     font-weight: 700; }
   .single-product div.product table.variations {
+    position: relative;
     margin: 0; }
     .single-product div.product table.variations th,
     .single-product div.product table.variations td {
-      display: list-item;
       padding: 0;
       list-style: none;
-      background-color: transparent; }
+      background-color: transparent;
+      vertical-align: middle; }
     .single-product div.product table.variations .value {
       margin-bottom: 1em; }
+      .single-product div.product table.variations .value select {
+        border: 1px solid #ddd;
+        padding: 0 .75em;
+        margin: 0.5em 0;
+        height: 2.507em;
+        font-size: .97em;
+        border-radius: 0;
+        max-width: 100%;
+        width: 100%;
+        vertical-align: middle;
+        background-color: #fff;
+        color: #333;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        transition: color .3s, border .3s, background .3s, opacity .3s; }
+      .single-product div.product table.variations .value .reset_variations {
+        position: absolute;
+        right: 0;
+        bottom: 95%;
+        color: currentColor;
+        opacity: 0.6;
+        font-size: 11px;
+        text-transform: uppercase; }
   .single-product div.product .single_variation .price {
     margin-bottom: 1em;
     display: block; }
@@ -1783,62 +1806,104 @@ dl.variation {
   /**
 	 * Full width content area product layout
 	 */
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-1 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-1 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-1 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-1 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-1 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-1 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-1 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-1 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-1 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-1 ul.products li.post,
   .shopper-full-width-content .site-main .columns-1 ul.products li.product,
   .shopper-full-width-content .site-main .columns-1 ul.products li.post {
     width: 100%;
     margin-right: 0;
     float: none; }
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-2 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-2 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-2 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-2 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-2 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-2 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-2 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-2 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-2 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-2 ul.products li.post,
   .shopper-full-width-content .site-main .columns-2 ul.products li.product,
   .shopper-full-width-content .site-main .columns-2 ul.products li.post {
     width: 47.8260869565%;
     float: left;
     margin-right: 4.347826087%; }
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-3 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-3 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-3 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-3 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-3 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-3 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-3 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-3 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-3 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-3 ul.products li.post,
   .shopper-full-width-content .site-main .columns-3 ul.products li.product,
   .shopper-full-width-content .site-main .columns-3 ul.products li.post {
     width: 30.4347826087%;
     float: left;
     margin-right: 4.347826087%; }
+    .page-template-tpl-page-fullwidth-php .site-main-shop .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
+    .page-template-tpl-page-fullwidth-php .site-main-shop .columns-3 ul.products li.post:hover .woocommerce-loop-category__title,
     .page-template-tpl-page-fullwidth-php .site-main .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
     .page-template-tpl-page-fullwidth-php .site-main .columns-3 ul.products li.post:hover .woocommerce-loop-category__title,
+    .page-template-tpl-page-homepage-php .site-main-shop .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
+    .page-template-tpl-page-homepage-php .site-main-shop .columns-3 ul.products li.post:hover .woocommerce-loop-category__title,
     .page-template-tpl-page-homepage-php .site-main .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
     .page-template-tpl-page-homepage-php .site-main .columns-3 ul.products li.post:hover .woocommerce-loop-category__title,
+    .shopper-full-width-content .site-main-shop .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
+    .shopper-full-width-content .site-main-shop .columns-3 ul.products li.post:hover .woocommerce-loop-category__title,
     .shopper-full-width-content .site-main .columns-3 ul.products li.product:hover .woocommerce-loop-category__title,
     .shopper-full-width-content .site-main .columns-3 ul.products li.post:hover .woocommerce-loop-category__title {
       background-color: #ff6600;
       color: #fff; }
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-4 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-4 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-4 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-4 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-4 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-4 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-4 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-4 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-4 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-4 ul.products li.post,
   .shopper-full-width-content .site-main .columns-4 ul.products li.product,
   .shopper-full-width-content .site-main .columns-4 ul.products li.post {
     width: 21.7391304348%;
     float: left;
     margin-right: 4.347826087%; }
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-5 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-5 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-5 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-5 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-5 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-5 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-5 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-5 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-5 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-5 ul.products li.post,
   .shopper-full-width-content .site-main .columns-5 ul.products li.product,
   .shopper-full-width-content .site-main .columns-5 ul.products li.post {
     width: 16.9%;
     margin-right: 3.8%; }
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-6 ul.products li.product,
+  .page-template-tpl-page-fullwidth-php .site-main-shop .columns-6 ul.products li.post,
   .page-template-tpl-page-fullwidth-php .site-main .columns-6 ul.products li.product,
   .page-template-tpl-page-fullwidth-php .site-main .columns-6 ul.products li.post,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-6 ul.products li.product,
+  .page-template-tpl-page-homepage-php .site-main-shop .columns-6 ul.products li.post,
   .page-template-tpl-page-homepage-php .site-main .columns-6 ul.products li.product,
   .page-template-tpl-page-homepage-php .site-main .columns-6 ul.products li.post,
+  .shopper-full-width-content .site-main-shop .columns-6 ul.products li.product,
+  .shopper-full-width-content .site-main-shop .columns-6 ul.products li.post,
   .shopper-full-width-content .site-main .columns-6 ul.products li.product,
   .shopper-full-width-content .site-main .columns-6 ul.products li.post {
     width: 13.0434782609%;
@@ -1847,52 +1912,72 @@ dl.variation {
   /**
 	 * Main content area (adjacent to sidebar) product layout
 	 */
+  .site-main-shop ul.products li.product img,
+  .site-main-shop ul.products li.post img,
   .site-main ul.products li.product img,
   .site-main ul.products li.post img {
     -webkit-transition: .3s ease-in-out;
     -moz-transition: .3s ease-in-out;
     -ms-transition: .3s ease-in-out;
     transition: .3s ease-in-out; }
+  .site-main-shop ul.products li.product:hover img,
+  .site-main-shop ul.products li.post:hover img,
   .site-main ul.products li.product:hover img,
   .site-main ul.products li.post:hover img {
     opacity: 0.5; }
+  .site-main-shop .columns-1 ul.products li.product,
+  .site-main-shop .columns-1 ul.products li.post,
   .site-main .columns-1 ul.products li.product,
   .site-main .columns-1 ul.products li.post {
     width: 100%;
     margin-right: 0;
     float: none; }
+  .site-main-shop .columns-2 ul.products li.product,
+  .site-main-shop .columns-2 ul.products li.post,
   .site-main .columns-2 ul.products li.product,
   .site-main .columns-2 ul.products li.post {
     width: 48%;
     margin-right: 3.8%; }
+  .site-main-shop .columns-3 ul.products li.product,
+  .site-main-shop .columns-3 ul.products li.post,
   .site-main .columns-3 ul.products li.product,
   .site-main .columns-3 ul.products li.post {
     width: 29.4117647059%;
     float: left;
     margin-right: 5.8823529412%; }
+  .site-main-shop .columns-4 ul.products li.product,
+  .site-main-shop .columns-4 ul.products li.post,
   .site-main .columns-4 ul.products li.product,
   .site-main .columns-4 ul.products li.post {
     width: 22.05%;
     margin-right: 3.8%;
     overflow: hidden; }
+    .site-main-shop .columns-4 ul.products li.product:hover .button,
+    .site-main-shop .columns-4 ul.products li.post:hover .button,
     .site-main .columns-4 ul.products li.product:hover .button,
     .site-main .columns-4 ul.products li.post:hover .button {
       opacity: 1;
       left: 0;
       text-decoration: none; }
+  .site-main-shop .columns-5 ul.products li.product,
+  .site-main-shop .columns-5 ul.products li.post,
   .site-main .columns-5 ul.products li.product,
   .site-main .columns-5 ul.products li.post {
     width: 16.9%;
     margin-right: 3.8%; }
+  .site-main-shop .columns-6 ul.products li.product,
+  .site-main-shop .columns-6 ul.products li.post,
   .site-main .columns-6 ul.products li.product,
   .site-main .columns-6 ul.products li.post {
     width: 11.7647058824%;
     float: left;
     margin-right: 5.8823529412%; }
+  .site-main-shop ul.products li.product,
   .site-main ul.products li.product {
     width: 29.4117647059%;
     float: left;
     margin-right: 5.8823529412%; }
+    .site-main-shop ul.products li.product:hover .button,
     .site-main ul.products li.product:hover .button {
       opacity: 1;
       left: 0; }
@@ -1993,12 +2078,22 @@ dl.variation {
     margin-right: 1em;
     margin-bottom: 0;
     padding: 0; }
-  .woocommerce-pagination {
+  .shopper-nav-pos-right .woocommerce-pagination {
     float: right;
     border: 0;
     clear: none;
     padding: 0;
     margin-bottom: 0; }
+  .shopper-nav-pos-left .woocommerce-pagination {
+    float: left;
+    border: 0;
+    clear: none;
+    padding: 0;
+    margin-bottom: 0; }
+  .shopper-nav-pos-center .woocommerce-pagination {
+    border-top: 0;
+    border-bottom: 0;
+    padding: 0; }
   /**
 	 * Cart
 	 */

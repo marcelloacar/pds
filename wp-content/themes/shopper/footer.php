@@ -16,8 +16,6 @@
 
 	<?php do_action( 'shopper_before_footer' ); ?>
 
-	<?php do_action( 'shopper_before_footer' ); ?>
-
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="col-full">
 
@@ -27,6 +25,7 @@
 			 *
 			 * @hooked shopper_footer_widgets - 10
 			 * @hooked shopper_credit         - 20
+			 * @hooked shopper_footer_menu    - 30			 
 			 */
 			do_action( 'shopper_footer' ); ?>
 
