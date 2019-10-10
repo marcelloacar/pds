@@ -18,10 +18,10 @@ get_header(); ?>
 				<div class="page-content">
 
 					<header class="page-header">
-						<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'shopper' ); ?></h1>
+						<h1 class="page-title"><?php esc_html_e( 'Opa!  Pagina não encontrada.', 'shopper' ); ?></h1>
 					</header><!-- .page-header -->
 
-					<p><?php esc_html_e( 'Nothing was found at this location. Please check your URL or use the search form below.', 'shopper' ); ?></p>
+					<p><?php esc_html_e( 'Essa pagina não foi encotrada. Por favor, verifique a URL ou use a busca abaixo.', 'shopper' ); ?></p>
 
 					<?php
 					echo '<section aria-label="Search">';

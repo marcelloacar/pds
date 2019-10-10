@@ -1,0 +1,506 @@
+.woosocio_wrap{
+	width:100%;
+}
+div#woosocio-services-block {
+	display: block;
+	clear: both;
+	margin-bottom: 25px;
+	background-color: #fff;
+	padding: 25px 25px 5px 20px;
+	overflow: hidden;
+	width: 600px;
+	float:left;
+}
+
+/* Add the logos for the woosocio services */
+span.pub-logos {
+	float: left;
+	display: block;
+	width: 130px;
+	height: 75px;
+	margin-top: -18px;
+	margin-left: 5px;
+	vertical-align: top;
+}
+
+.left, .right{
+	width: 50%;
+	float: left;
+}
+
+div#facebook { background: url( woosocio-fb-2x.png ) no-repeat; background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px; }
+div#twitter { background: url( woosocio-twitter-2x.png ) no-repeat; background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px;  }
+div#linkedin { background: url( woosocio-linkedin-2x.png )no-repeat; background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px;  }
+div#tumblr { background: url( woosocio-tumblr-2x.png ) no-repeat; background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px;  }
+div#path { background: url( woosocio-path-2x.png ) no-repeat;  background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px;  }
+div#google_plus { background: url( woosocio-google-2x.png ) no-repeat;  background-size: 32px 32px; padding-left: 42px;background-position: 0px 0px;padding-top:5px;  }
+
+a.woosocio-profile-link, a.woosocio-profile-link:visited {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a.woosocio-profile-link:hover {
+	color: #f1831e;
+}
+
+a.woosocio-add-connection, a.woosocio-add-connection:visited {
+	text-decoration: none;
+}
+
+a.woosocio-add-connection:hover {
+	color: #f1831e;
+}
+
+div.woosocio-service-entry {
+	clear: both;
+	margin-bottom: 10px;
+	padding: 10px 0 25px 0;
+	border-bottom: 1px #eee solid;
+	margin-right: 40px;
+	overflow: hidden;
+}
+
+div.woosocio-service-entry:last-of-type{
+	border-width: 0px;
+}
+
+div.woosocio-service-left {
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+	min-height: 35px;
+}
+
+
+div.woosocio-service-left a{
+	font-size: 24px;
+	text-decoration: none;
+}
+
+div.woosocio-service-left a:hover{
+	text-decoration: underline;
+}
+
+div.woosocio-service-right {
+	display: inline-block;
+	text-align: right;
+	float: right;
+	padding-top:5px;
+}
+
+div.woosocio-service-right ul {
+	margin-top: 0;
+}
+
+div.woosocio-service-right li {
+	list-style-type: none;
+	font-size: 14px;
+}
+
+.woosocio-info {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	background-image: url( info-2x.png );
+	background-size: 16px 16px;
+	text-indent: -99999px;
+	float: left;
+	cursor: help;
+	text-decoration: none;
+	margin-right: 10px;
+	margin-top:3px;
+}
+
+.pub-disconnect-button {
+	-webkit-border-image: none;
+	border-bottom-color: #CCC;
+	border-bottom-style: none;
+	border-bottom-width: 0px;
+	border-left-color: #CCC;
+	border-left-style: none;
+	border-left-width: 0px;
+	border-right-color: #CCC;
+	border-right-style: none;
+	border-right-width: 0px;
+	border-top-color: #CCC;
+	border-top-style: none;
+	border-top-width: 0px;
+	color: #CCC;
+	cursor: auto;
+	display: inline;
+	font-family: sans-serif;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	height: auto;
+	line-height: 22px;
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+	margin-bottom: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 0px;
+	outline-color: #CCC;
+	outline-style: none;
+	outline-width: 0px;
+	overflow-y: visible;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+	position: static;
+	right: auto;
+	text-align: left;
+	text-decoration: none;
+	top: auto;
+	vertical-align: baseline;
+	width: auto;
+	z-index: auto;
+}
+
+.pub-disconnect-button:hover {
+	color: #f1831e;
+}
+
+table#option-profile {
+	padding-bottom: 8px;
+}
+
+table#option-profile td {
+	font-family: "Lucida Grande",Verdana,Arial,sans-serif;
+	vertical-align: middle;
+}
+
+table#option-profile td.radio {
+	padding-right: 20px;
+}
+
+table#option-profile td.thumbnail {
+	padding-right: 20px;
+}
+
+table#option-profile td.details {
+	font-weight: bold; color: #333333
+}
+
+table#option-fb-fanpage td, table#option-fanpage td {
+	font-family: "Lucida Grande",Verdana,Arial,sans-serif;
+	vertical-align: middle;
+}
+
+table#option-fb-fanpage td.thumbnail, table#option-fanpage td.thumbnail  {
+	padding: 5px 20px 5px 20px;
+}
+
+table#option-fb-fanpage td.details, table#option-fanpage td.details {
+	width: 130px;
+	padding-right: 10px;
+}
+
+table#option-fb-fanpage td.details span.name, table#option-fanpage td.details span.name {
+	font-weight: bold; color: #333333;
+}
+
+table#option-fb-fanpage td.details span.category, table#option-fanpage td.details span.category {
+	font-size: 10px; color: #888888;
+}
+
+input.fb-options {
+	font-family: "Lucida Grande",Verdana,Arial,sans-serif;
+	font-size: 12px;
+}
+
+.pub-connection-error {
+	color: #ff0000;
+}
+
+.woosocio-about-us
+{
+	float:right;
+	width:300px;
+	height:auto;
+	/*border:#ccc 3px solid;*/
+	margin-right:25px;
+	/*margin-top:5px;*/
+	background-color:#EEEEEE;padding:10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.woosocio-about-us .box
+{
+	
+	background-color:#FFF;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	padding:5px;
+	margin:0 auto;
+	margin-bottom:10px;
+}
+
+.woosocio-about-us .box #wid
+{
+	height:auto;
+	text-align:center;	
+}
+
+.woosocio-infobox {
+  background: rgba(170,200,255,0.81);
+  /*margin: 0 auto;
+  margin-left:1cm;*/
+  width: 325px;
+  padding: 10px;
+  text-align: center;
+  font: normal 16px/1 "Times New Roman", Times, serif;
+  overflow: hidden;
+  /* border-radius */
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  /* box-shadow */
+  -webkit-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  -moz-box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+  box-shadow: rgba(0,0,0,0.2) 0px 1px 3px;
+}
+
+/*============== Custom Work ==============*/
+.ws-table-css td{
+	border-bottom: 1px solid #c3c0c0 !important;
+}
+.ws-table-css {
+	border: 0px solid #fff !important;
+}
+.ws-table-css td:first-child{
+	width: 18%;
+}
+.ws-table-css td:nth-child(2){
+	width: 58%;
+}
+.ws-table-css img {
+	border: 1px solid #c3c0c0;
+	padding: 4px;
+	border-radius: 3px;
+}
+.widefat td, .widefat th {
+    padding-bottom: 6px !important;
+}
+.ws-table-title {
+	background-image: -webkit-linear-gradient(top, #389abe 0%,#2a7b99 100%);
+    color: #fff;
+    padding: 11px;
+}
+
+.wp-list-table .ws-table-td {
+	padding-top: 22px;
+}
+
+.ws-table-2nd-class {
+	padding: 0;
+}
+
+.ws-table-2nd-class td {
+	padding: 0;
+}
+
+.ws-table-2nd-class h3 {
+	color: #fff;
+	margin: 8px;
+}
+
+/*============== IOS 8 Switch radio ==============*/
+input[type="radio"].ios8-switch {
+    position: absolute;
+    margin: 8px 0 0 16px;    
+}
+input[type="radio"].ios8-switch + label {
+    position: relative;
+    padding: 5px 0 0 50px;
+    line-height: 2.0em;
+}
+input[type="radio"].ios8-switch + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 40px; /* x*5 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+input[type="radio"].ios8-switch + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 24px; /* x*3 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+input[type="radio"].ios8-switch + label:hover:after {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+input[type="radio"].ios8-switch:checked + label:after {
+    margin-left: 16px;
+}
+input[type="radio"].ios8-switch:checked + label:before {
+    background: #55D069;
+}
+
+/*============== IOS 8 Switch checkbox ==============*/
+input[type="checkbox"].ios8-switch {
+    position: absolute;
+    margin: 8px 0 0 16px;    
+}
+input[type="checkbox"].ios8-switch + label {
+    position: relative;
+    padding: 5px 0 0 50px;
+    line-height: 2.0em;
+}
+input[type="checkbox"].ios8-switch + label:before {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 0;
+    width: 40px; /* x*5 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+input[type="checkbox"].ios8-switch + label:after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0px;
+    top: 0px;
+    width: 24px; /* x*3 */
+    height: 24px; /* x*3 */
+    border-radius: 16px; /* x*2 */
+    background: #fff;
+    border: 1px solid #d9d9d9;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+input[type="checkbox"].ios8-switch + label:hover:after {
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+}
+input[type="checkbox"].ios8-switch:checked + label:after {
+    margin-left: 16px;
+}
+input[type="checkbox"].ios8-switch:checked + label:before {
+    background: #55D069;
+}
+
+/*============== Facebook Buttons ==============*/
+/*html * {
+	  font-family: 'Montserrat', sans-serif;
+	  box-sizing: border-box;
+}
+*/
+/*body {
+    background: #4688F1;
+    padding: 0;
+    margin: 0;
+}
+*/
+.login-box {
+    background: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 5vh auto;
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.login-box:hover {
+	  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.login-box h2 {
+    margin: 20px 0 20px;
+    padding: 0;
+    text-transform: uppercase;
+    color: #4688F1;
+}
+
+.social-button {
+	  background-position: 25px 0px;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: inline-block;
+    height: 50px;
+	  line-height: 50px;
+    text-align: left;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: 100%;
+	  border-radius: 3px;
+    margin: 10px auto;
+    outline: rgb(255, 255, 255) none 0px;
+    padding-left: 20%;
+    transition: all 0.2s cubic-bezier(0.72, 0.01, 0.56, 1) 0s;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-connect {
+    background: rgb(255, 255, 255) url('https://eswarasai.com/projects/social-login/img/facebook.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+    border: 1px solid rgb(60, 90, 154);
+}
+
+#facebook-connect:hover {
+	  border-color: rgb(60, 90, 154);
+	  background: rgb(60, 90, 154) url('https://eswarasai.com/projects/social-login/img/facebook-white.svg') no-repeat scroll 5px 0px / 30px 50px padding-box border-box;
+	  -webkit-transition: all .8s ease-out;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease-out;
+}
+
+#facebook-connect span {
+	  box-sizing: border-box;
+    color: rgb(60, 90, 154);
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    border: 0px none rgb(255, 255, 255);
+    outline: rgb(255, 255, 255) none 0px;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+#facebook-connect:hover span {
+	  color: #FFF;
+	  -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    -ms-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}

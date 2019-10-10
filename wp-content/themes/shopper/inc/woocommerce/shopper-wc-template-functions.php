@@ -152,7 +152,7 @@ if ( ! function_exists( 'shopper_custom_product_search' ) ) {
 			<div class="custom-product-search">
 				<form role="search" method="get" class="shopper-product-search" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 					<div class="nav-left">
-						<div class="nav-search-facade" data-value="search-alias=aps"><span class="nav-search-label"><?php _e( 'All', 'shopper' ); ?></span> <i class="fa fa-angle-down"></i></div>			
+						<div class="nav-search-facade" data-value="search-alias=aps"><span class="nav-search-label"><?php _e( 'Todas', 'shopper' ); ?></span> <i class="fa fa-angle-down"></i></div>			
 						<?php
 							echo shopper_product_cat_select('indent_sub');
 						?>
@@ -162,7 +162,7 @@ if ( ! function_exists( 'shopper_custom_product_search' ) ) {
 					</div>
 					<div class="nav-fill">
 						<input type="hidden" name="post_type" value="product" />
-						<input name="s" type="text" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Search for products', 'shopper' ); ?>"/>
+						<input name="s" type="text" value="<?php echo get_search_query(); ?>" placeholder="<?php esc_attr_e( 'Buscar produtos', 'shopper' ); ?>"/>
 					</div>
 				</form>
 			</div>
@@ -182,7 +182,7 @@ if ( ! function_exists( 'shopper_product_cat_select' ) ) {
 		if ( count( $cats ) > 0 ) {
 
 			$select = '<select class="shopper-cat-list" id="' . $select_id .'" name="product_cat">';
-			$select .= apply_filters('shopper_cat_all_option', '<option value="">'. esc_html__( 'All', 'shopper' ) .'</option>' );
+			$select .= apply_filters('shopper_cat_all_option', '<option value="">'. esc_html__( 'Todas', 'shopper' ) .'</option>' );
 
 			foreach( $cats as $cat ) {
 
@@ -273,13 +273,13 @@ if ( !function_exists( 'shopper_header_myacount' ) ) {
 
 		?>
 
-			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('My Account','shopper'); ?>"><i class="fa fa-user"></i></a>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Minha Conta','shopper'); ?>"><i class="fa fa-user"></i></a>
 			<?php
 
 		} else {
 
 			?>
-			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Register','shopper'); ?>"><i class="fa fa-lock"></i></a>
+			<a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" title="<?php _e('Login / Cadastro','shopper'); ?>"><i class="fa fa-lock"></i></a>
 			<?php 
 		}
 
