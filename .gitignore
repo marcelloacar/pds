@@ -4,3 +4,4 @@ wp-includes
 wp-*.php
 index.php
 xmlrpc.php
+!wp-config.php
