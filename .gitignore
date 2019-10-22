@@ -1,7 +1,13 @@
-#Ignore wordpress default files
-wp-admin
-wp-includes
-wp-*.php
-index.php
-xmlrpc.php
-!wp-config.php
+/ext
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
