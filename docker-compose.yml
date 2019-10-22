@@ -7,13 +7,16 @@ services:
     volumes:
       - db_data:/var/lib/mysql
     restart: always
+    ports:
+      - '3306:3306'
     environment:
       MYSQL_ROOT_PASSWORD: password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD: wordpress
+      MYSQL_DATABASE: db_database
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: db_password
     networks:
-      - wpsite
+      - site
+
   # phpmyadmin
   phpmyadmin:
     depends_on:
@@ -26,23 +29,8 @@ services:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: password 
     networks:
-      - wpsite
-  # Wordpress
-  wordpress:
-    depends_on:
-      - db
-    image: wordpress:latest
-    ports:
-      - '8000:80'
-    restart: always
-    volumes: ['./:/var/www/html']
-    environment:
-      WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: wordpress
-      WORDPRESS_DB_PASSWORD: wordpress
-    networks:
-      - wpsite
+      - site
 networks:
-  wpsite:
+  site:
 volumes:
   db_data:
