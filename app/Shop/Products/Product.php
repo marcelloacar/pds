@@ -10,6 +10,7 @@ use Gloudemans\Shoppingcart\Contracts\Buyable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
 use Nicolaslopezj\Searchable\SearchableTrait;
+use \Storage;
 
 class Product extends Model implements Buyable
 {
@@ -143,5 +144,16 @@ class Product extends Model implements Buyable
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+   /**
+     * Get the user's first name.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function getCoverAttribute($value)
+    {
+        return  Storage::url($value);
     }
 }

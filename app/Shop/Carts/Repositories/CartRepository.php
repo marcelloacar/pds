@@ -14,6 +14,7 @@ use Gloudemans\Shoppingcart\Cart;
 use Gloudemans\Shoppingcart\CartItem;
 use Gloudemans\Shoppingcart\Exceptions\InvalidRowIDException;
 use Illuminate\Support\Collection;
+use \Storage;
 
 class CartRepository extends BaseRepository implements CartRepositoryInterface
 {

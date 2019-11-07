@@ -29,7 +29,7 @@ $factory->define(Category::class, function (Faker\Generator $faker) {
         'name' => $name,
         'slug' => str_slug($name),
         'description' => $faker->paragraph,
-        'cover' => $file->store('categories', ['disk' => 'public']),
+        'cover' => $file->store('categories'),
         'status' => 1
     ];
 });

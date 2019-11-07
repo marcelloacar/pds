@@ -1,0 +1,8 @@
+.navbar-brand {
+    width: 110px;
+}
+
+.navbar-brand img {
+    width: 100%;
+    margin-top: -40px;
+}

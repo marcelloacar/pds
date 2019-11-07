@@ -54,7 +54,7 @@
                         <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Registrar</a></li>
                     @endif
                     <li id="cart" class="menubar-cart">
-                        <a href="{{ route('cart.index') }}" title="View Cart" class="awemenu-icon menu-shopping-cart">
+                        <a href="{{ route('cart.index') }}" title="Visualizar Carrinho" class="awemenu-icon menu-shopping-cart">
                             <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             <span class="cart-number">{{ $cartCount }}</span>
                         </a>
@@ -74,7 +74,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('home') }}">{{ config('app.name') }}</a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('images/logo.jpeg') }}"></a></a>
                 </div>
                 <div class="col-md-10">
                     @include('layouts.front.header-cart')

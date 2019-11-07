@@ -41,7 +41,9 @@ mix
             'node_modules/font-awesome/css/font-awesome.css',
             'node_modules/select2/dist/css/select2.css',
             'resources/assets/css/drift-basic.min.css',
-            'resources/assets/css/front.css'
+            'resources/assets/css/front.css',
+            'resources/assets/css/theme.css'
+
         ],
         'public/css/style.min.css'
     )

@@ -3,11 +3,11 @@
         <div class="row">
             <div class="col-md-12 text-center">
 
-                <ul class="footer-menu">
+               <!--  <ul class="footer-menu">
                     <li> <a href="{{ route('accounts', ['tab' => 'profile']) }}">Sua Conta</a>  </li>
                     <li> <a href="">Fale Conosco</a>  </li>
                     <li> <a href="">Termos de Serviço</a>  </li>
-                </ul>
+                </ul> -->
 
                 <ul class="footer-social">
                     <li> <a href=""> <i class="fa fa-facebook" aria-hidden="true"></i>  </a> </li>

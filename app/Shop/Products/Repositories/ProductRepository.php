@@ -216,7 +216,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
      */
     public function saveCoverImage(UploadedFile $file) : string
     {
-        return $file->store('products', ['disk' => 'public']);
+        return $file->store('products');
     }
 
     /**
