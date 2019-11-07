@@ -1,5 +1,6 @@
 <?php
 
+
 return [
 
     /*
@@ -34,5 +35,10 @@ return [
         'key' => env('STRIPE_KEY'),
         'secret' => env('STRIPE_SECRET'),
     ],
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_SECRET'),
+        'redirect' => env('FACEBOOK_CALLBACK_DOMAIN'). '/callback/facebook',
+    ], 
 
 ];
