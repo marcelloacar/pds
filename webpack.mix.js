@@ -75,10 +75,8 @@ mix
 */
 mix.browserSync({
   proxy: 'http://localhost:8000',
-  host: 'pds-demo.herokuapp.com',
-  port: 443,
+  host: 'localhost',
   open: true,
-  https: true,
   watchOptions: {
     usePolling: false
   },
