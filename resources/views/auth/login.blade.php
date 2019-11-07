@@ -7,7 +7,7 @@
         <div class="col-md-12">@include('layouts.errors-and-messages')</div>
         <div class="col-md-4 col-md-offset-4">
             <h2>Login to your account</h2>
-            <form action="{{ route('login') }}" method="post" class="form-horizontal">
+            <!-- <form action="{{ route('login') }}" method="post" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <label for="email">Email</label>
@@ -25,11 +25,8 @@
                 <hr>
                 <a href="{{route('password.request')}}">Esqueci minha senha</a><br>
                 <a href="{{route('register')}}" class="text-center">Não possui conta? Crie a sua agora.</a>
-            </div>
-        </div>
-        <hr>
-        <div class="form-group row mb-0">
-             <div class="col-md-8 offset-md-4">
+            </div> -->
+            <div class="col-md-8 offset-md-4">
                 <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
             </div>
         </div>
