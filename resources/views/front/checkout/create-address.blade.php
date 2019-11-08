@@ -29,7 +29,7 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="province_id">Province </label>
+                        <label for="province_id">Estado </label>
                         <select name="province_id" id="province_id" class="form-control">
                             @foreach($provinces as $province)
                                 <option value="{{ $province->id }}">{{ $province->name }}</option>

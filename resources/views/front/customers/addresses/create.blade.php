@@ -44,7 +44,7 @@
                 <div class="box-footer">
                     <div class="btn-group">
                         <a href="{{ route('accounts', ['tab' => 'address']) }}" class="btn btn-default">Voltar</a>
-                        <button type="submit" class="btn btn-primary">CreCriarate</button>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>
             </form>

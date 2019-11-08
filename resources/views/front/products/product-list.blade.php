@@ -65,5 +65,5 @@
         @endif
     </ul>
 @else
-    <p class="alert alert-warning">Nenhum produto aind.</p>
+    <p class="alert alert-warning">Nenhum produto ainda.</p>
 @endif

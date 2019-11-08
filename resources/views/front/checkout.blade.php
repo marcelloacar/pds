@@ -28,8 +28,8 @@
                                         <thead>
                                             <th>Apelido</th>
                                             <th>Endereço</th>
-                                            <th>Endereço de Cobrança</th>
-                                            <th>Endereço de Entrega</th>
+                                            <!-- <th>Endereço de Cobrança</th> -->
+                                            <!-- <th>Endereço de Entrega</th> -->
                                         </thead>
                                         <tbody>
                                             @foreach($addresses as $key => $address)
@@ -43,7 +43,7 @@
                                                         {{ $address->city }} {{ $address->state_code }} <br>
                                                         {{ $address->country->name }} {{ $address->zip }}
                                                     </td>
-                                                    <td>
+                                                   <!--  <td>
                                                         <label class="col-md-6 col-md-offset-3">
                                                         <input
                                                                     type="radio"
@@ -51,14 +51,14 @@
                                                                     name="billing_address"
                                                                     @if($billingAddress->id == $address->id) checked="checked"  @endif>
                                                         </label>
-                                                    </td>
-                                                    <td>
+                                                    </td> -->
+                                                    <!-- <td>
                                                         @if($billingAddress->id == $address->id)
                                                             <label for="sameDeliveryAddress">
                                                                 <input type="checkbox" id="sameDeliveryAddress" checked="checked"> O mesmo de cobrança
                                                             </label>
                                                         @endif
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -75,7 +75,7 @@
                                                         {{ $address->country->name }} {{ $address->zip }}
                                                     </td>
                                                     <td></td>
-                                                    <td>
+                                                    <!-- <td>
                                                         <label class="col-md-6 col-md-offset-3">
                                                             <input
                                                                     type="radio"
@@ -83,7 +83,7 @@
                                                                     name="delivery_address"
                                                                     @if(old('') == $address->id) checked="checked"  @endif>
                                                         </label>
-                                                    </td>
+                                                    </td> -->
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -91,7 +91,7 @@
                                 </div>
                             </div>
                         @endif
-                        @if(!is_null($rates))
+                       <!--  @if(!is_null($rates))
                             <div class="row">
                                 <div class="col-md-12">
                                     <legend><i class="fa fa-truck"></i> Transportadora</legend>
@@ -108,7 +108,7 @@
                                     </ul>
                                 </div>
                             </div> <br>
-                        @endif
+                        @endif -->
                         <div class="row">
                             <div class="col-md-12">
                                 <legend><i class="fa fa-credit-card"></i> Pagamento</legend>

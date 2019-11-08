@@ -15,7 +15,7 @@ trait UploadableTrait
      * @param null $filename
      * @return false|string
      */
-    public function uploadOne(UploadedFile $file, $folder = null, $disk = 'public', $filename = null)
+    public function uploadOne(UploadedFile $file, $folder = null, $disk = 's3', $filename = null)
     {
         $name = !is_null($filename) ? $filename : str_random(25);
 
@@ -34,7 +34,7 @@ trait UploadableTrait
      *
      * @return false|string
      */
-    public function storeFile(UploadedFile $file, $folder = 'products', $disk = 'public')
+    public function storeFile(UploadedFile $file, $folder = 'products', $disk = 's3')
     {
         return $file->store($folder, ['disk' => $disk]);
     }

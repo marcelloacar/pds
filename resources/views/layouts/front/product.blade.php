@@ -19,7 +19,7 @@
                 <li>
                     <a href="javascript: void(0)">
                     <img class="img-responsive img-thumbnail"
-                         src="{{ asset("storage/$image->src") }}"
+                         src="{{ $image->src }}"
                          alt="{{ $product->name }}" />
                     </a>
                 </li>
@@ -73,7 +73,7 @@
                                    class="form-control"
                                    name="quantity"
                                    id="quantity"
-                                   placeholder="Quantidade"
+                                   placeholder="Qtd"
                                    value="{{ old('quantity') }}" />
                             <input type="hidden" name="product" value="{{ $product->id }}" />
                         </div>

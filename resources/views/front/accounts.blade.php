@@ -80,7 +80,7 @@
                                                                   <th>Nome</th>
                                                                   <th>Quantidade</th>
                                                                   <th>Preço</th>
-                                                                  <th>Capa</th>
+                                                                  <th>Imgem</th>
                                                               </thead>
                                                               <tbody>
                                                               @foreach ($order['products'] as $product)
@@ -88,7 +88,7 @@
                                                                       <td>{{$product['name']}}</td>
                                                                       <td>{{$product['pivot']['quantity']}}</td>
                                                                       <td>{{$product['price']}}</td>
-                                                                      <td><img src="{{ asset("storage/".$product['cover']) }}" width=50px height=50px alt="{{ $product['name'] }}" class="img-orderDetail"></td>
+                                                                      <td><img src="{{ $product['cover'] }}" width=50px height=50px alt="{{ $product['name'] }}" class="img-orderDetail"></td>
                                                                   </tr>
                                                               @endforeach
                                                               </tbody>

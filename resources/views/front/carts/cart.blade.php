@@ -29,7 +29,7 @@
                             
                             <div class="col-lg-2 col-md-2 col-sm-4 col-xs-4">
                                 <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><b>Capa</b></div>
+                                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12"><b>Imagem</b></div>
                                 </div>
                             </div>
 
@@ -138,13 +138,13 @@
                                     <td class="bg-warning">{{config('cart.currency')}} {{ $shippingFee }}</td>
                                 </tr>
                                 @endif
-                                <tr>
+                                <!-- <tr>
                                     <td class="bg-warning">Tax</td>
                                     <td class="bg-warning"></td>
                                     <td class="bg-warning"></td>
                                     <td class="bg-warning"></td>
                                     <td class="bg-warning">{{config('cart.currency')}} {{ number_format($tax, 2, ',', '.') }}</td>
-                                </tr>
+                                </tr> -->
                                 <tr>
                                     <td class="bg-success">Total</td>
                                     <td class="bg-success"></td>

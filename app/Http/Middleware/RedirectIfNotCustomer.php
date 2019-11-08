@@ -17,7 +17,7 @@ class RedirectIfNotCustomer
     public function handle($request, Closure $next, $guard = 'checkout')
     {
         if (!auth()->guard($guard)->check()) {
-            $request->session()->flash('error', 'You must be an employee to see this page');
+            $request->session()->flash('error', 'Você precisa ser um funcionário para ver essa página');
             return redirect(route('admin.login'));
         }
 

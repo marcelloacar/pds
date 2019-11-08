@@ -1,4 +1,4 @@
-<tr>
+<!-- <tr>
     <td>
         @if(isset($payment['name']))
             {{ ucwords($payment['name']) }}
@@ -62,3 +62,4 @@
             });
         });
     </script>
+ -->

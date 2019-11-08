@@ -88,7 +88,7 @@ class CustomerAddressController extends Controller
         $this->addressRepo->createAddress($request->except('_token', '_method'));
 
         return redirect()->route('accounts', ['tab' => 'address'])
-            ->with('message', 'Address creation successful');
+            ->with('message', 'Endereço regitrado com sucesso');
     }
 
     /**
@@ -128,7 +128,7 @@ class CustomerAddressController extends Controller
         $addressRepo->updateAddress($request);
 
         return redirect()->route('accounts', ['tab' => 'address'])
-            ->with('message', 'Address update successful');
+            ->with('message', 'Endereço atualizado com sucesso');
     }
 
     /**
@@ -149,6 +149,6 @@ class CustomerAddressController extends Controller
              $address->delete();
        }
         return redirect()->route('accounts', ['tab' => 'address'])
-            ->with('message', 'Address delete successful');
+            ->with('message', 'Endereço removido com sucesso');
     }
 }

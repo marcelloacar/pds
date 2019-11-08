@@ -56,7 +56,7 @@ class CartRepository extends BaseRepository implements CartRepositoryInterface
         try {
             $this->model->remove($rowId);
         } catch (InvalidRowIDException $e) {
-            throw new ProductInCartNotFoundException('Product in cart not found.');
+            throw new ProductInCartNotFoundException('Produto não localizado no carrinho.');
         }
     }
 

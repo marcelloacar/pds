@@ -147,13 +147,16 @@ class Product extends Model implements Buyable
     }
 
    /**
-     * Get the user's first name.
+     * Get Cover URL
      *
      * @param  string  $value
      * @return string
      */
     public function getCoverAttribute($value)
     {
+        if(strpos($value, 'http') !== false)
+            return  $value;
+
         return  Storage::url($value);
     }
 }

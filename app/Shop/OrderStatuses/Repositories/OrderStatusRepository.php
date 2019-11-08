@@ -66,7 +66,7 @@ class OrderStatusRepository extends BaseRepository implements OrderStatusReposit
         try {
             return $this->findOneOrFail($id);
         } catch (ModelNotFoundException $e) {
-            throw new OrderStatusNotFoundException('Order status not found.');
+            throw new OrderStatusNotFoundException('Status do pedido não localizado.');
         }
     }
 

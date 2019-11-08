@@ -8,7 +8,7 @@
             <div class="col-md-12">@include('layouts.errors-and-messages')</div>
             <div class="col-md-5">
                 <h2>Entrar</h2>
-                <form action="{{ route('cart.login') }}" method="post" class="form-horizontal">
+                <!-- <form action="{{ route('cart.login') }}" method="post" class="form-horizontal">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="email" class="control-label">Email</label>
@@ -24,11 +24,14 @@
                 </form>
                 <div class="row"><hr>
                     <a href="#">Esqueci minha senha</a><br>
+                </div> -->
+                <div class="col-md-8 offset-md-4">
+                    <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
                 </div>
             </div>
             <div class="col-md-6 col-md-offset-1">
                 <h2>Criar sua conta</h2>
-                <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+                <!-- <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                     {{ csrf_field() }}
                     <div class="form-group">
                         <label for="name" class="control-label">Nome</label>
@@ -53,7 +56,10 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary btn-block">Registrar</button>
                     </div>
-                </form>
+                </form> -->
+                <div class="col-md-8 offset-md-4">
+                    <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
+                </div>
             </div>
         </div>
     </section>

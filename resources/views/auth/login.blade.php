@@ -6,7 +6,7 @@
     <section class="container content">
         <div class="col-md-12">@include('layouts.errors-and-messages')</div>
         <div class="col-md-4 col-md-offset-4">
-            <h2>Login to your account</h2>
+            <h2>Entrar</h2>
             <!-- <form action="{{ route('login') }}" method="post" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">
