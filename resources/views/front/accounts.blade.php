@@ -69,7 +69,9 @@
                                                                         </td>
                                                                         <td>{{$order['payment']}}</td>
                                                                         <td>{{ config('cart.currency_symbol') }} {{$order['total']}}</td>
-                                                                        <td><p class="text-center" style="color: #ffffff; background-color: {{ $order['status']->color }}">{{ $order['status']->name }}</p></td>
+                                                                        <td><p class="text-center" style="color: #ffffff; background-color: {{ $order['status']->color }}">
+                                                                            {{ $order['status']->name }}
+                                                                        </p></td>
                                                                     </tr>
                                                                 </tbody>
                                                             </table>

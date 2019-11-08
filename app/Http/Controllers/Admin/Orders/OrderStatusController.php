@@ -49,7 +49,7 @@ class OrderStatusController extends Controller
     public function store(CreateOrderStatusRequest $request)
     {
         $this->orderStatuses->createOrderStatus($request->except('_token', '_method'));
-        $request->session()->flash('message', 'Create successful');
+        $request->session()->flash('message', 'Criado com sucesso');
         return redirect()->route('admin.order-statuses.index');
     }
 
@@ -78,7 +78,7 @@ class OrderStatusController extends Controller
         $update = new OrderStatusRepository($orderStatus);
         $update->updateOrderStatus($request->all());
 
-        $request->session()->flash('message', 'Update successful');
+        $request->session()->flash('message', 'Atualizado com sucesso');
         return redirect()->route('admin.order-statuses.edit', $id);
     }
 
@@ -92,7 +92,7 @@ class OrderStatusController extends Controller
     {
         $this->orderStatuses->findOrderStatusById($id)->delete();
 
-        request()->session()->flash('message', 'Delete successful');
+        request()->session()->flash('message', 'Removido com sucesso');
         return redirect()->route('admin.order-statuses.index');
     }
 }

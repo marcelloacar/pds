@@ -64,7 +64,27 @@ class OrderStatusRepository extends BaseRepository implements OrderStatusReposit
     public function findOrderStatusById(int $id) : OrderStatus
     {
         try {
-            return $this->findOneOrFail($id);
+
+            $status = $this->findOneOrFail($id);
+
+            switch($status->name){
+                case 'paid':
+                    $status->name = "Pagamento Confirmado";
+                    break;
+                case 'pending':
+                    $status->name = "Pendente";
+                    break;
+                case 'error':
+                    $status->name = "Erro";
+                    break;
+                case 'on-delivery':
+                    $status->name = "Aguardando retirada";
+                    break;
+                case 'ordered':
+                    $status->name = "Pedido Recebido";
+                    break;
+            }
+            return $status;
         } catch (ModelNotFoundException $e) {
             throw new OrderStatusNotFoundException('Status do pedido não localizado.');
         }

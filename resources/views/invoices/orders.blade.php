@@ -68,14 +68,14 @@
                         <td>Descontos:</td>
                         <td>{{$order->discounts}}</td>
                     </tr>
-                    <tr>
+    <!--                 <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td>Taxas:</td>
                         <td>{{$order->tax}}</td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <td></td>
                         <td></td>

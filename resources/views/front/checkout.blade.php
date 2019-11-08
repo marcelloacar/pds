@@ -43,22 +43,22 @@
                                                         {{ $address->city }} {{ $address->state_code }} <br>
                                                         {{ $address->country->name }} {{ $address->zip }}
                                                     </td>
-                                                   <!--  <td>
+                                                    <td style="display: none">
                                                         <label class="col-md-6 col-md-offset-3">
                                                         <input
                                                                     type="radio"
                                                                     value="{{ $address->id }}"
                                                                     name="billing_address"
-                                                                    @if($billingAddress->id == $address->id) checked="checked"  @endif>
+                                                                    checked="checked">
                                                         </label>
-                                                    </td> -->
-                                                    <!-- <td>
-                                                        @if($billingAddress->id == $address->id)
+                                                    </td>
+                                                    <td style="display: none">
+                                                        <!-- @if($billingAddress->id == $address->id) -->
                                                             <label for="sameDeliveryAddress">
                                                                 <input type="checkbox" id="sameDeliveryAddress" checked="checked"> O mesmo de cobrança
                                                             </label>
-                                                        @endif
-                                                    </td> -->
+                                                        <!-- @endif -->
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -75,15 +75,15 @@
                                                         {{ $address->country->name }} {{ $address->zip }}
                                                     </td>
                                                     <td></td>
-                                                    <!-- <td>
+                                                    <td style="display: none">
                                                         <label class="col-md-6 col-md-offset-3">
                                                             <input
                                                                     type="radio"
                                                                     value="{{ $address->id }}"
                                                                     name="delivery_address"
-                                                                    @if(old('') == $address->id) checked="checked"  @endif>
+                                                                   checked="checked">
                                                         </label>
-                                                    </td> -->
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
