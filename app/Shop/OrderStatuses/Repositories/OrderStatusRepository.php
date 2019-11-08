@@ -65,6 +65,8 @@ class OrderStatusRepository extends BaseRepository implements OrderStatusReposit
     {
         try {
 
+            return $this->findOneOrFail($id);
+
             $status = $this->findOneOrFail($id);
 
             switch($status->name){

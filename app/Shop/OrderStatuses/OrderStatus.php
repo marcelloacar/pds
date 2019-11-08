@@ -28,4 +28,27 @@ class OrderStatus extends Model
     {
         return $this->hasMany(Order::class);
     }
+
+    public function getLabelAttribute(){
+
+        switch($this->name){
+            case 'paid':
+                return  "Pagamento Confirmado";
+                break;
+            case 'pending':
+                return  "Pendente";
+                break;
+            case 'error':
+                return  "Erro";
+                break;
+            case 'on-delivery':
+                return  "Aguardando retirada";
+                break;
+            case 'ordered':
+                return  "Pedido Recebido";
+                break;
+        }
+
+        return "";
+    }
 }
