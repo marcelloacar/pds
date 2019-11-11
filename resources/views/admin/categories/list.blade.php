@@ -35,7 +35,7 @@
                                         <input type="hidden" name="_method" value="delete">
                                         <div class="btn-group">
                                             <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
-                                            <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>
+                                            <button onclick="return confirm('Tem certeza?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>
                                         </div>
                                     </form>
                                 </td>
