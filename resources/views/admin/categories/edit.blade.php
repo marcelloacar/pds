@@ -10,7 +10,7 @@
                     <input type="hidden" name="_method" value="put">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="parent">Parent Category</label>
+                        <label for="parent">Categoria pai</label>
                         <select name="parent" id="parent" class="form-control select2">
                             <option value="0">No parent</option>
                             @foreach($categories as $cat)
@@ -19,21 +19,21 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="name">Name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{!! $category->name ?: old('name')  !!}">
+                        <label for="name">Nome <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{!! $category->name ?: old('name')  !!}">
                     </div>
                     <div class="form-group">
-                        <label for="description">Description </label>
-                        <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Description">{!! $category->description ?: old('description')  !!}</textarea>
+                        <label for="description">Descrição </label>
+                        <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Descrição">{!! $category->description ?: old('description')  !!}</textarea>
                     </div>
                     @if(isset($category->cover))
                     <div class="form-group">
                         <img src="{{ asset("storage/$category->cover") }}" alt="" class="img-responsive"> <br/>
-                        <a onclick="return confirm('Are you sure?')" href="{{ route('admin.category.remove.image', ['category' => $category->id]) }}" class="btn btn-danger">Remove image?</a>
+                        <a onclick="return confirm('Are you sure?')" href="{{ route('admin.category.remove.image', ['category' => $category->id]) }}" class="btn btn-danger">Remover imagem?</a>
                     </div>
                     @endif
                     <div class="form-group">
-                        <label for="cover">Cover </label>
+                        <label for="cover">Imagem </label>
                         <input type="file" name="cover" id="cover" class="form-control">
                     </div>
                     <div class="form-group">
@@ -47,8 +47,8 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Back</a>
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Atualizar</button>
                     </div>
                 </div>
             </form>

@@ -10,7 +10,7 @@
                     {{ csrf_field() }}
                     <input type="hidden" name="_method" value="put">
                     <div class="form-group">
-                        <label for="name">Name <span class="text-danger">*</span></label>
+                        <label for="name">Nome <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{!! $customer->name ?: old('name')  !!}">
                     </div>
                     <div class="form-group">
@@ -21,8 +21,8 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password <span class="text-danger">*</span></label>
-                        <input type="password" name="password" id="password" placeholder="xxxxx" class="form-control">
+                        <label for="password">Senha <span class="text-danger">*</span></label>
+                        <input type="password" name="password" id="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="status">Status </label>
@@ -36,7 +36,7 @@
                 <div class="box-footer">
                     <div class="btn-group">
                         <a href="{{ route('admin.customers.index') }}" class="btn btn-default btn-sm">Back</a>
-                        <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                        <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
                     </div>
                 </div>
             </form>

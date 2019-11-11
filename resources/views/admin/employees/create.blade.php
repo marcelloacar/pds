@@ -9,8 +9,8 @@
                 <div class="box-body">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="name">Name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{{ old('name') }}">
+                        <label for="name">Nome <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
                         <label for="email">Email <span class="text-danger">*</span></label>
@@ -20,11 +20,11 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password <span class="text-danger">*</span></label>
-                        <input type="password" name="password" id="password" placeholder="xxxxx" class="form-control">
+                        <label for="password">Senha <span class="text-danger">*</span></label>
+                        <input type="password" name="password" id="password" placeholder="***" class="form-control">
                     </div>
                     <div class="form-group">
-                        <label for="role">Role </label>
+                        <label for="role">Atribuições </label>
                         <select name="role" id="role" class="form-control select2">
                             <option></option>
                             @foreach($roles as $role)
@@ -38,8 +38,8 @@
                 <div class="box-footer">
                     <div class="btn-group">
                         <div class="btn-group">
-                            <a href="{{ route('admin.employees.index') }}" class="btn btn-default">Back</a>
-                            <button type="submit" class="btn btn-primary">Create</button>
+                            <a href="{{ route('admin.employees.index') }}" class="btn btn-default">Voltar</a>
+                            <button type="submit" class="btn btn-primary">Criar</button>
                         </div>
                     </div>
                 </div>

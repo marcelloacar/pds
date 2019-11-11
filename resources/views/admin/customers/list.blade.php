@@ -15,10 +15,10 @@
                         <thead>
                             <tr>
                                 <td class="col-md-2">ID</td>
-                                <td class="col-md-2">Name</td>
+                                <td class="col-md-2">Nome</td>
                                 <td class="col-md-2">Email</td>
                                 <td class="col-md-2">Status</td>
-                                <td class="col-md-4">Actions</td>
+                                <td class="col-md-4">Ações</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -33,9 +33,9 @@
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="delete">
                                         <div class="btn-group">
-                                            <a href="{{ route('admin.customers.show', $customer['id']) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i> Show</a>
-                                            <a href="{{ route('admin.customers.edit', $customer['id']) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                                            <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Delete</button>
+                                            <a href="{{ route('admin.customers.show', $customer['id']) }}" class="btn btn-default btn-sm"><i class="fa fa-eye"></i> Exibir</a>
+                                            <a href="{{ route('admin.customers.edit', $customer['id']) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                                            <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>
                                         </div>
                                     </form>
                                 </td>
