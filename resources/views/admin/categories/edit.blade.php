@@ -29,7 +29,7 @@
                     @if(isset($category->cover))
                     <div class="form-group">
                         <img src="{{ asset("storage/$category->cover") }}" alt="" class="img-responsive"> <br/>
-                        <a onclick="return confirm('Are you sure?')" href="{{ route('admin.category.remove.image', ['category' => $category->id]) }}" class="btn btn-danger">Remover imagem?</a>
+                        <a onclick="return confirm('Tem certeza?')" href="{{ route('admin.category.remove.image', ['category' => $category->id]) }}" class="btn btn-danger">Remover imagem?</a>
                     </div>
                     @endif
                     <div class="form-group">

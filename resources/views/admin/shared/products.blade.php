@@ -3,11 +3,11 @@
         <thead>
         <tr>
             <td>ID</td>
-            <td>Name</td>
-            <td>Quantity</td>
-            <td>Price</td>
+            <td>Nome</td>
+            <td>Quantidade</td>
+            <td>Preço</td>
             <td>Status</td>
-            <td>Actions</td>
+            <td>Ações</td>
         </tr>
         </thead>
         <tbody>
@@ -30,7 +30,7 @@
                         <input type="hidden" name="_method" value="delete">
                         <div class="btn-group">
                             @if($admin->hasPermission('update-product'))<a href="{{ route('admin.products.edit', $product->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>@endif
-                            @if($admin->hasPermission('delete-product'))<button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Delete</button>@endif
+                            @if($admin->hasPermission('delete-product'))<button onclick="return confirm('Tem certeaza?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>@endif
                         </div>
                     </form>
                 </td>

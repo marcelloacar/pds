@@ -80,7 +80,7 @@
                                                 @if(!$productAttributes->isEmpty())<span class="text-danger">Note: Quantity is disabled. Total quantity is calculated by the sum of all the combinations.</span> @endif
                                             </div>
                                             <div class="form-group">
-                                                <label for="price">Price</label>
+                                                <label for="price">Preço</label>
                                                 @if($productAttributes->isEmpty())
                                                     <div class="input-group">
                                                         <span class="input-group-addon">{{ config('cart.currency') }}</span>
@@ -127,8 +127,8 @@
                                     <div class="row">
                                         <div class="box-footer">
                                             <div class="btn-group">
-                                                <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Back</a>
-                                                <button type="submit" class="btn btn-primary btn-sm">Update</button>
+                                                <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Voltar</a>
+                                                <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
                                             </div>
                                         </div>
                                     </div>
