@@ -8,14 +8,14 @@
         @if($categories)
             <div class="box">
                 <div class="box-body">
-                    <h2>Categories</h2>
+                    <h2>Categorias</h2>
                     <table class="table">
                         <thead>
                             <tr>
-                                <td class="col-md-3">Name</td>
-                                <td class="col-md-3">Cover</td>
+                                <td class="col-md-3">Nome</td>
+                                <td class="col-md-3">Imagem</td>
                                 <td class="col-md-3">Status</td>
-                                <td class="col-md-3">Actions</td>
+                                <td class="col-md-3">Ações</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -34,8 +34,8 @@
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="delete">
                                         <div class="btn-group">
-                                            <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Edit</a>
-                                            <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Delete</button>
+                                            <a href="{{ route('admin.categories.edit', $category->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                                            <button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>
                                         </div>
                                     </form>
                                 </td>

@@ -12,11 +12,11 @@
                     <table class="table">
                         <thead>
                         <tr>
-                            <td class="col-md-2">Name</td>
-                            <td class="col-md-3">Description</td>
-                            <td class="col-md-3">Cover</td>
-                            <td class="col-md-2">Quantity</td>
-                            <td class="col-md-2">Price</td>
+                            <td class="col-md-2">Nome</td>
+                            <td class="col-md-3">Descrição</td>
+                            <td class="col-md-3">Imagem principal</td>
+                            <td class="col-md-2">Quantidade</td>
+                            <td class="col-md-2">Preço</td>
                         </tr>
                         </thead>
                         <tbody>
@@ -37,7 +37,7 @@
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Back</a>
+                        <a href="{{ route('admin.products.index') }}" class="btn btn-default btn-sm">Voltar</a>
                     </div>
                 </div>
             </div>

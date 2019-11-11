@@ -9,7 +9,7 @@
                 <div class="box-body">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="parent">Parent Category</label>
+                        <label for="parent">Categoria Pai</label>
                         <select name="parent" id="parent" class="form-control select2">
                             <option value="">-- Select --</option>
                             @foreach($categories as $category)
@@ -18,30 +18,30 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="name">Name <span class="text-danger">*</span></label>
-                        <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{{ old('name') }}">
+                        <label for="name">Nome <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
-                        <label for="description">Description </label>
-                        <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Description">{{ old('description') }}</textarea>
+                        <label for="description">Descrição </label>
+                        <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Descrição">{{ old('description') }}</textarea>
                     </div>
                     <div class="form-group">
-                        <label for="cover">Cover </label>
+                        <label for="cover">Imagem </label>
                         <input type="file" name="cover" id="cover" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="0">Disable</option>
-                            <option value="1">Enable</option>
+                            <option value="0">Inativo</option>
+                            <option value="1">Ativo</option>
                         </select>
                     </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Back</a>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <a href="{{ route('admin.categories.index') }}" class="btn btn-default">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Criar</button>
                     </div>
                 </div>
             </form>

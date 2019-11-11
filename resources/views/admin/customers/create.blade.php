@@ -9,7 +9,7 @@
                 <div class="box-body">
                     {{ csrf_field() }}
                     <div class="form-group">
-                        <label for="name">Name <span class="text-danger">*</span></label>
+                        <label for="name">Nome <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Name" class="form-control" value="{{ old('name') }}">
                     </div>
                     <div class="form-group">
@@ -20,22 +20,22 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password <span class="text-danger">*</span></label>
-                        <input type="password" name="password" id="password" placeholder="xxxxx" class="form-control">
+                        <label for="password">Senha <span class="text-danger">*</span></label>
+                        <input type="password" name="password" id="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="0">Disable</option>
-                            <option value="1">Enable</option>
+                            <option value="0">Inativo</option>
+                            <option value="1">Ativo</option>
                         </select>
                     </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.products.index') }}" class="btn btn-default">Back</a>
-                        <button type="submit" class="btn btn-primary">Create</button>
+                        <a href="{{ route('admin.products.index') }}" class="btn btn-default">Voltar</a>
+                        <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>
             </form>
