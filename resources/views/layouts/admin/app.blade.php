@@ -56,6 +56,9 @@
 <script src="{{ asset('js/admin.min.js') }}"></script>
 <script src="{{ asset('//cdn.ckeditor.com/4.8.0/standard/ckeditor.js') }}"></script>
 <script src="{{ asset('js/scripts.js?v=0.2') }}"></script>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0&appId=1330071030447394&autoLogAppEvents=1"></script>
+
 @yield('js')
 </body>
 </html>
