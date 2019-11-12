@@ -28,4 +28,17 @@ class UpdateCategoryRequest extends FormRequest
             'name' => ['required', Rule::unique('categories')->ignore(request()->segment(3))]
         ];
     }
+
+    /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'name.required'  => 'Nome é obrigatório',
+            'name.unique'  => 'Uma categoria com este nome já existe',
+        ];
+    }
 }

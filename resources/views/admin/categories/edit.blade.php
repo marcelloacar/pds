@@ -9,7 +9,7 @@
                 <div class="box-body">
                     <input type="hidden" name="_method" value="put">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="parent">Categoria pai</label>
                         <select name="parent" id="parent" class="form-control select2">
                             <option value="0">No parent</option>
@@ -17,7 +17,7 @@
                                 <option @if($cat->id == $category->parent_id) selected="selected" @endif value="{{$cat->id}}">{{$cat->name}}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="name">Nome <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{!! $category->name ?: old('name')  !!}">
@@ -39,8 +39,8 @@
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="0" @if($category->status == 0) selected="selected" @endif>Disable</option>
-                            <option value="1" @if($category->status == 1) selected="selected" @endif>Enable</option>
+                            <option value="0" @if($category->status == 0) selected="selected" @endif>Inativo</option>
+                            <option value="1" @if($category->status == 1) selected="selected" @endif>Ativo</option>
                         </select>
                     </div>
                 </div>

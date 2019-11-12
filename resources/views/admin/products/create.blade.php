@@ -12,7 +12,7 @@
                         <h2>Produtos</h2>
                         <div class="form-group">
                             <label for="sku">SKU <span class="text-danger">*</span></label>
-                            <input type="text" name="sku" id="sku" placeholder="xxxxx" class="form-control" value="{{ old('sku') }}">
+                            <input type="text" name="sku" id="sku" placeholder="123" class="form-control" value="{{ old('sku') }}">
                         </div>
                         <div class="form-group">
                             <label for="name">Nome <span class="text-danger">*</span></label>
@@ -33,16 +33,16 @@
                         </div>
                         <div class="form-group">
                             <label for="quantity">Quantidade <span class="text-danger">*</span></label>
-                            <input type="text" name="quantity" id="quantity" placeholder="Quantity" class="form-control" value="{{ old('quantity') }}">
+                            <input type="text" name="quantity" id="quantity" placeholder="QUantidade" class="form-control" value="{{ old('quantity') }}">
                         </div>
                         <div class="form-group">
                             <label for="price">Preço <span class="text-danger">*</span></label>
                             <div class="input-group">
                                 <span class="input-group-addon">R$</span>
-                                <input type="text" name="price" id="price" placeholder="Price" class="form-control" value="{{ old('price') }}">
+                                <input type="text" name="price" id="price" placeholder="Preço" class="form-control" value="{{ old('price') }}">
                             </div>
                         </div>
-                        @if(!$brands->isEmpty())
+                        <!-- @if(!$brands->isEmpty())
                         <div class="form-group">
                             <label for="brand_id">Marca </label>
                             <select name="brand_id" id="brand_id" class="form-control select2">
@@ -52,9 +52,9 @@
                                 @endforeach
                             </select>
                         </div>
-                        @endif
+                        @endif -->
                         @include('admin.shared.status-select', ['status' => 0])
-                        @include('admin.shared.attribute-select', [compact('default_weight')])
+                        <!-- @include('admin.shared.attribute-select', [compact('default_weight')]) -->
                     </div>
                     <div class="col-md-4">
                         <h2>Categoria</h2>

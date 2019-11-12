@@ -145,7 +145,7 @@ class EmployeeController extends Controller
         }
 
         return redirect()->route('admin.employees.edit', $id)
-            ->with('message', 'Update successful');
+            ->with('message', 'Atualizado com sucesso');
     }
 
     /**
@@ -162,7 +162,7 @@ class EmployeeController extends Controller
         $employeeRepo = new EmployeeRepository($employee);
         $employeeRepo->deleteEmployee();
 
-        return redirect()->route('admin.employees.index')->with('message', 'Delete successful');
+        return redirect()->route('admin.employees.index')->with('message', 'Removido com sucesso');
     }
 
     /**
@@ -194,6 +194,6 @@ class EmployeeController extends Controller
         }
 
         return redirect()->route('admin.employee.profile', $id)
-            ->with('message', 'Update successful');
+            ->with('message', 'Atualizado com sucesso');
     }
 }

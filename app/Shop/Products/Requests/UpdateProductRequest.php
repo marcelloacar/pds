@@ -21,4 +21,21 @@ class UpdateProductRequest extends BaseFormRequest
             'price' => ['required']
         ];
     }
+
+     /**
+     * Get the error messages for the defined validation rules.
+     *
+     * @return array
+     */
+    public function messages()
+    {
+        return [
+            'sku.required' => 'SKU é obrigatório',
+            'name.required'  => 'Nome é obrigatório',
+            'name.unique'  => 'Um produto com este nome já existe',
+            'quantity.required'  => 'Quantidade  é obrigatório',
+            'quantity.numeric'  => 'Quantidade precisa ser um valor numerico',
+            'price.required'  => 'Preço é obrigatório',
+        ];
+    }
 }

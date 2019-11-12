@@ -17,18 +17,18 @@ class Product extends Model implements Buyable
     use SearchableTrait;
 
     public const MASS_UNIT = [
-        'OUNCES' => 'oz',
-        'GRAMS' => 'gms',
-        'POUNDS' => 'lbs'
+        // 'OUNCES' => 'oz',
+        'GRAMAS' => 'gms',
+        // 'POUNDS' => 'lbs'
     ];
 
     public const DISTANCE_UNIT = [
-        'CENTIMETER' => 'cm',
-        'METER' => 'mtr',
-        'INCH' => 'in',
-        'MILIMETER' => 'mm',
-        'FOOT' => 'ft',
-        'YARD' => 'yd'
+        'CENTIMETROS' => 'cm',
+        'METROS' => 'mtr',
+        // 'INCH' => 'in',
+        'MILIMETROS' => 'mm',
+        // 'FOOT' => 'ft',
+        // 'YARD' => 'yd'
     ];
 
     /**

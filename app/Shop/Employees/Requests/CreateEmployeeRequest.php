@@ -30,4 +30,21 @@ class CreateEmployeeRequest extends FormRequest
             'role' => ['required']
         ];
     }
+
+    /**
+    * Get the error messages for the defined validation rules.
+    *
+    * @return array
+    */
+    public function messages()
+    {
+        return [
+        'name.required'  => 'Nome é obrigatório',
+        'email.required'  => 'E-mail é obrigatório',
+        'password.required'  => 'Senha é obrigatório',
+        'password.min'  => 'Senha precisa ter pelo menos 8 caracteres',
+        'role.required'  => 'Atribuições é obrigatório',
+        'email.unique'  => 'Já existe um funcionário cadastrado com esse e-mail',
+        ];
+    }
 }

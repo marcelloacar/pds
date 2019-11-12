@@ -19,4 +19,20 @@ class CreateCustomerRequest extends BaseFormRequest
             'password' => ['required', 'min:8']
         ];
     }
+
+    /**
+    * Get the error messages for the defined validation rules.
+    *
+    * @return array
+    */
+    public function messages()
+    {
+        return [
+        'name.required'  => 'Nome é obrigatório',
+        'email.required'  => 'E-mail é obrigatório',
+        'email.unique'  => 'Já existe um cliente cadastrado com esse e-mail',
+        'password.required'  => 'Senha é obrigatório',
+        'password.min'  => 'Senha precisa ter pelo menos 8 caracteres',
+        ];
+    }
 }

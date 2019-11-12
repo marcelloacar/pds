@@ -8,7 +8,7 @@
             <form action="{{ route('admin.categories.store') }}" method="post" class="form" enctype="multipart/form-data">
                 <div class="box-body">
                     {{ csrf_field() }}
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label for="parent">Categoria Pai</label>
                         <select name="parent" id="parent" class="form-control select2">
                             <option value="">-- Select --</option>
@@ -16,7 +16,7 @@
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="name">Nome <span class="text-danger">*</span></label>
                         <input type="text" name="name" id="name" placeholder="Nome" class="form-control" value="{{ old('name') }}">

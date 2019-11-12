@@ -12,10 +12,10 @@
                         <input type="hidden" name="_method" value="put">
                         <div class="col-md-12">
                             <!-- Nav tabs -->
-                            <ul class="nav nav-tabs" role="tablist" id="tablist">
+                            <!-- <ul class="nav nav-tabs" role="tablist" id="tablist">
                                 <li role="presentation" @if(!request()->has('combination')) class="active" @endif><a href="#info" aria-controls="home" role="tab" data-toggle="tab">Info</a></li>
                                 <li role="presentation" @if(request()->has('combination')) class="active" @endif><a href="#combinations" aria-controls="profile" role="tab" data-toggle="tab">Combinações</a></li>
-                            </ul>
+                            </ul> -->
                             <!-- Tab panes -->
                             <div class="tab-content" id="tabcontent">
                                 <div role="tabpanel" class="tab-pane @if(!request()->has('combination')) active @endif" id="info">
@@ -24,7 +24,7 @@
                                             <h2>{{ ucfirst($product->name) }}</h2>
                                             <div class="form-group">
                                                 <label for="sku">SKU <span class="text-danger">*</span></label>
-                                                <input type="text" name="sku" id="sku" placeholder="xxxxx" class="form-control" value="{!! $product->sku !!}">
+                                                <input type="text" name="sku" id="sku" placeholder="123" class="form-control" value="{!! $product->sku !!}">
                                             </div>
                                             <div class="form-group">
                                                 <label for="name">Nome <span class="text-danger">*</span></label>
@@ -77,7 +77,7 @@
                                                     <input type="hidden" name="quantity" value="{{ $qty }}">
                                                     <input type="text" value="{{ $qty }}" class="form-control" disabled>
                                                 @endif
-                                                @if(!$productAttributes->isEmpty())<span class="text-danger">Note: Quantity is disabled. Total quantity is calculated by the sum of all the combinations.</span> @endif
+                                                <!-- @if(!$productAttributes->isEmpty())<span class="text-danger">Note: Quantity is disabled. Total quantity is calculated by the sum of all the combinations.</span> @endif -->
                                             </div>
                                             <div class="form-group">
                                                 <label for="price">Preço</label>
@@ -93,16 +93,16 @@
                                                         <input type="text" id="price" placeholder="Preço" class="form-control" value="{!! $product->price !!}" disabled>
                                                     </div>
                                                 @endif
-                                                @if(!$productAttributes->isEmpty())<span class="text-danger">Note: Price is disabled. Price is derived based on the combination.</span> @endif
+                                                <!-- @if(!$productAttributes->isEmpty())<span class="text-danger">Note: Price is disabled. Price is derived based on the combination.</span> @endif -->
                                             </div>
-                                            <div class="form-group">
+                                           <!--  <div class="form-group">
                                                 <label for="sale_price">Preço de venda</label>
                                                 <div class="input-group">
                                                     <span class="input-group-addon">{{ config('cart.currency') }}</span>
                                                     <input type="text" name="sale_price" id="sale_price" placeholder="Preço de venda" class="form-control" value="{{ $product->sale_price }}">
                                                 </div>
-                                            </div>
-                                            @if(!$brands->isEmpty())
+                                            </div> -->
+                                           <!--  @if(!$brands->isEmpty())
                                                 <div class="form-group">
                                                     <label for="brand_id">Marca </label>
                                                     <select name="brand_id" id="brand_id" class="form-control select2">
@@ -112,11 +112,11 @@
                                                         @endforeach
                                                     </select>
                                                 </div>
-                                            @endif
+                                            @endif -->
                                             <div class="form-group">
                                                 @include('admin.shared.status-select', ['status' => $product->status])
                                             </div>
-                                            @include('admin.shared.attribute-select', [compact('default_weight')])
+                                            <!-- @include('admin.shared.attribute-select', [compact('default_weight')]) -->
                                             <!-- /.box-body -->
                                         </div>
                                         <div class="col-md-4">
@@ -133,7 +133,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane @if(request()->has('combination')) active @endif" id="combinations">
+                                <!-- <div role="tabpanel" class="tab-pane @if(request()->has('combination')) active @endif" id="combinations">
                                     <div class="row">
                                         <div class="col-md-4">
                                             @include('admin.products.create-attributes', compact('attributes'))
@@ -142,7 +142,7 @@
                                             @include('admin.products.attributes', compact('productAttributes'))
                                         </div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>

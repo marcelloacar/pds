@@ -158,7 +158,7 @@ class ProductController extends Controller
             $productRepo->detachCategories();
         }
 
-        return redirect()->route('admin.products.edit', $product->id)->with('message', 'Create successful');
+        return redirect()->route('admin.products.edit', $product->id)->with('message', 'Criado com sucesso');
     }
 
     /**
@@ -267,7 +267,7 @@ class ProductController extends Controller
         $productRepo->updateProduct($data);
 
         return redirect()->route('admin.products.edit', $id)
-            ->with('message', 'Update successful');
+            ->with('message', 'Atualizado com sucesso');
     }
 
     /**
@@ -293,7 +293,7 @@ class ProductController extends Controller
         $productRepo = new ProductRepository($product);
         $productRepo->removeProduct();
 
-        return redirect()->route('admin.products.index')->with('message', 'Delete successful');
+        return redirect()->route('admin.products.index')->with('message', 'Removido com sucesso');
     }
 
     /**
@@ -304,7 +304,7 @@ class ProductController extends Controller
     public function removeImage(Request $request)
     {
         $this->productRepo->deleteFile($request->only('product', 'image'), 'uploads');
-        return redirect()->back()->with('message', 'Image delete successful');
+        return redirect()->back()->with('message', 'Imagem removida com sucesso');
     }
 
     /**
@@ -315,7 +315,7 @@ class ProductController extends Controller
     public function removeThumbnail(Request $request)
     {
         $this->productRepo->deleteThumb($request->input('src'));
-        return redirect()->back()->with('message', 'Image delete successful');
+        return redirect()->back()->with('message', 'Imagem removida com sucesso');
     }
 
     /**

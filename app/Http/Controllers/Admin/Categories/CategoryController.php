@@ -62,7 +62,7 @@ class CategoryController extends Controller
     {
         $this->categoryRepo->createCategory($request->except('_token', '_method'));
 
-        return redirect()->route('admin.categories.index')->with('message', 'Category created');
+        return redirect()->route('admin.categories.index')->with('message', 'Categoria criada com sucesso');
     }
 
     /**
@@ -112,7 +112,7 @@ class CategoryController extends Controller
         $update = new CategoryRepository($category);
         $update->updateCategory($request->except('_token', '_method'));
 
-        $request->session()->flash('message', 'Update successful');
+        $request->session()->flash('message', 'Atualizado com sucesso');
         return redirect()->route('admin.categories.edit', $id);
     }
 
@@ -128,7 +128,7 @@ class CategoryController extends Controller
         $category->products()->sync([]);
         $category->delete();
 
-        request()->session()->flash('message', 'Delete successful');
+        request()->session()->flash('message', 'Removido com sucesso');
         return redirect()->route('admin.categories.index');
     }
 
@@ -139,7 +139,7 @@ class CategoryController extends Controller
     public function removeImage(Request $request)
     {
         $this->categoryRepo->deleteFile($request->only('category'));
-        request()->session()->flash('message', 'Image delete successful');
+        request()->session()->flash('message', 'Imagem removida com sucesso');
         return redirect()->route('admin.categories.edit', $request->input('category'));
     }
 }
