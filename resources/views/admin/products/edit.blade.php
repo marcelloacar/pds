@@ -120,7 +120,7 @@
                                             <!-- /.box-body -->
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="fb-share-button" data-href="{{ route('front.get.product', $product->id) }}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('front.get.product', $product->id) }}" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                                            <div class="fb-share-button" data-href="{{ route('front.get.product', str_slug($product->slug)) }}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('front.get.product', str_slug($product->slug)) }}" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
                                             <h2>Categoria</h2>
                                             @include('admin.shared.categories', ['categories' => $categories, 'ids' => $product])
                                         </div>
