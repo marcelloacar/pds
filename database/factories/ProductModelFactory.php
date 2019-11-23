@@ -24,7 +24,7 @@ $factory->define(Product::class, function (Faker\Generator $faker) {
         'name' => $product,
         'slug' => str_slug($product),
         'description' => $this->faker->paragraph,
-        'cover' => $file->store('products'),
+        'cover' => $file->store(env('AWS_ROOT_FOLDER') . '/public/products'),
         'quantity' => 10,
         'price' => 5.00,
         'status' => 1,

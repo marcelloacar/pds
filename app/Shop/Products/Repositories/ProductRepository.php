@@ -216,7 +216,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
      */
     public function saveCoverImage(UploadedFile $file) : string
     {
-        return $file->store('products');
+        return $file->store(env('AWS_ROOT_FOLDER') . '/public/products');
     }
 
     /**
@@ -227,7 +227,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     public function saveProductImages(Collection $collection)
     {
         $collection->each(function (UploadedFile $file) {
-            $filename = $this->storeFile($file);
+            $filename = $this->store(env('AWS_ROOT_FOLDER') . '/public/products');
             $productImage = new ProductImage([
                 'product_id' => $this->model->id,
                 'src' => $filename
