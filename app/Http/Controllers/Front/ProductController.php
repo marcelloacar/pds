@@ -6,6 +6,8 @@ use App\Shop\Products\Product;
 use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
 use App\Http\Controllers\Controller;
 use App\Shop\Products\Transformations\ProductTransformable;
+use App\Shop\Categories\Repositories\CategoryRepository;
+use App\Shop\Categories\Repositories\Interfaces\CategoryRepositoryInterface;
 
 class ProductController extends Controller
 {
@@ -20,9 +22,11 @@ class ProductController extends Controller
      * ProductController constructor.
      * @param ProductRepositoryInterface $productRepository
      */
-    public function __construct(ProductRepositoryInterface $productRepository)
+    public function __construct(ProductRepositoryInterface $productRepository, CategoryRepositoryInterface $categoryRepository)
     {
         $this->productRepo = $productRepository;
+        $this->categoryRepo = $categoryRepository;
+
     }
 
     /**
@@ -40,8 +44,11 @@ class ProductController extends Controller
             return $this->transformProduct($item);
         });
 
+        $categories_list = $this->categoryRepo->listCategories("name", "asc");
+
         return view('front.products.product-search', [
-            'products' => $this->productRepo->paginateArrayResults($products->all(), 10)
+            'products' => $this->productRepo->paginateArrayResults($products->all(), 10),
+            'categories_list' => $categories_list
         ]);
     }
 
