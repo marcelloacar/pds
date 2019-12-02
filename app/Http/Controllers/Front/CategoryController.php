@@ -31,13 +31,18 @@ class CategoryController extends Controller
      */
     public function getCategory(string $slug)
     {
-    
+        $category = $this->categoryRepo->findCategoryBySlug(['slug' => $slug]);
+
+        $repo = new CategoryRepository($category);
+
+        $products = $repo->findProducts()->where('status', 1)->all();
+
         $categories_list = $this->categoryRepo->listCategories("name", "asc");
-        $category = $categories_list[0];
 
         return view('front.categories.category', [
-            'categories_list' => $categories_list,
-            'category' => $category
+            'category' => $category,
+            'products' => $repo->paginateArrayResults($products, 20),
+            'categories_list' => $categories_list
         ]);
     }
 }
