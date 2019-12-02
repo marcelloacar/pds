@@ -126,7 +126,7 @@
                     <li><a href="{{ route('admin.couriers.create') }}"><i class="fa fa-plus"></i> Create courier</a></li>
                 </ul>
             </li> -->
-            <li class="header">CONFIGURAÇÕES</li>
+           <!--  <li class="header">CONFIGURAÇÕES</li>
             @if($user->hasRole('admin|superadmin'))
                 <li class="treeview @if(request()->segment(2) == 'employees' || request()->segment(2) == 'roles' || request()->segment(2) == 'permissions') active @endif">
             <a href="#">
@@ -138,7 +138,7 @@
             <ul class="treeview-menu">
                 <li><a href="{{ route('admin.employees.index') }}"><i class="fa fa-circle-o"></i> Listar Funcionários</a></li>
                 <li><a href="{{ route('admin.employees.create') }}"><i class="fa fa-plus"></i> Criar Funcionários</a></li>
-                <!-- <li class="@if(request()->segment(2) == 'roles') active @endif">
+                <li class="@if(request()->segment(2) == 'roles') active @endif">
                     <a href="#">
                         <i class="fa fa-star-o"></i> <span>Atribuições</span>
                         <span class="pull-right-container">
@@ -159,10 +159,10 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ route('admin.permissions.index') }}"><i class="fa fa-circle-o"></i> Listar permissão</a></li>
                     </ul>
-                </li> -->
+                </li>
             </ul>
         </li>
-            @endif
+            @endif -->
            <!--  <li class="treeview @if(request()->segment(2) == 'countries' || request()->segment(2) == 'provinces') active @endif">
                 <a href="#">
                     <i class="fa fa-flag"></i> <span>Países</span>

@@ -11,8 +11,8 @@
                     <div class="col-md-8">
                         <h2>Produtos</h2>
                         <div class="form-group">
-                            <label for="sku">SKU <span class="text-danger">*</span></label>
-                            <input type="text" name="sku" id="sku" placeholder="123" class="form-control" value="{{ old('sku') }}">
+                            <!-- <label for="sku">SKU <span class="text-danger">*</span></label> -->
+                            <input type="hidden" name="sku" id="sku" placeholder="123" class="form-control" value="0">
                         </div>
                         <div class="form-group">
                             <label for="name">Nome <span class="text-danger">*</span></label>
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group">
                             <label for="quantity">Quantidade <span class="text-danger">*</span></label>
-                            <input type="text" name="quantity" id="quantity" placeholder="QUantidade" class="form-control" value="{{ old('quantity') }}">
+                            <input type="text" name="quantity" id="quantity" placeholder="Quantidade" class="form-control" value="{{ old('quantity') }}">
                         </div>
                         <div class="form-group">
                             <label for="price">Preço <span class="text-danger">*</span></label>

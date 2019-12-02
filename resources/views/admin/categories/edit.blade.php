@@ -26,16 +26,16 @@
                         <label for="description">Descrição </label>
                         <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Descrição">{!! $category->description ?: old('description')  !!}</textarea>
                     </div>
-                    @if(isset($category->cover))
+                   <!--  @if(isset($category->cover))
                     <div class="form-group">
                         <img src="{{ asset("storage/$category->cover") }}" alt="" class="img-responsive"> <br/>
                         <a onclick="return confirm('Tem certeza?')" href="{{ route('admin.category.remove.image', ['category' => $category->id]) }}" class="btn btn-danger">Remover imagem?</a>
                     </div>
-                    @endif
-                    <div class="form-group">
+                    @endif -->
+                    <!-- <div class="form-group">
                         <label for="cover">Imagem </label>
                         <input type="file" name="cover" id="cover" class="form-control">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">

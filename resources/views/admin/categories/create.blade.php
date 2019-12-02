@@ -25,10 +25,10 @@
                         <label for="description">Descrição </label>
                         <textarea class="form-control ckeditor" name="description" id="description" rows="5" placeholder="Descrição">{{ old('description') }}</textarea>
                     </div>
-                    <div class="form-group">
+                   <!--  <div class="form-group">
                         <label for="cover">Imagem </label>
                         <input type="file" name="cover" id="cover" class="form-control">
-                    </div>
+                    </div> -->
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">

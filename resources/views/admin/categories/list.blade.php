@@ -13,8 +13,8 @@
                         <thead>
                             <tr>
                                 <td class="col-md-3">Nome</td>
-                                <td class="col-md-3">Imagem</td>
-                                <td class="col-md-3">Status</td>
+<!--                                 <td class="col-md-3">Imagem</td>
+ -->                                <td class="col-md-3">Status</td>
                                 <td class="col-md-3">Ações</td>
                             </tr>
                         </thead>
@@ -23,11 +23,11 @@
                             <tr>
                                 <td>
                                     <a href="{{ route('admin.categories.show', $category->id) }}">{{ $category->name }}</a></td>
-                                <td>
+                                <!-- <td>
                                     @if(isset($category->cover))
                                         <img src="{{ asset("storage/$category->cover") }}" alt="" class="img-responsive">
                                     @endif
-                                </td>
+                                </td> -->
                                 <td>@include('layouts.status', ['status' => $category->status])</td>
                                 <td>
                                     <form action="{{ route('admin.categories.destroy', $category->id) }}" method="post" class="form-horizontal">
