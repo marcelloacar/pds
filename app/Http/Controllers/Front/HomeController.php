@@ -25,9 +25,9 @@ class HomeController
      */
     public function index()
     {
-        $cat1 = $this->categoryRepo->findCategoryById(2);
-        $cat2 = $this->categoryRepo->findCategoryById(3);
-
-        return view('front.index', compact('cat1', 'cat2'));
+        $categories_list = $this->categoryRepo->listCategories("name", "asc");
+        $category = $categories_list[0];
+        $categories_list[0]->side_bar_active = true;
+        return view('front.index', compact('category','categories_list'));
     }
 }

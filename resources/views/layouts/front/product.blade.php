@@ -9,7 +9,7 @@
                          alt="{{ $product->name }}" />
                     @else
                     <img class="img-responsive img-thumbnail"
-                         src="{{ asset("https://placehold.it/180x180") }}"
+                         src="{{ asset('https://placehold.it/180x180') }}"
                          alt="{{ $product->name }}" />
                     @endif
                 </a>

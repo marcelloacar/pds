@@ -121,12 +121,20 @@ ul.navbar-nav > li.active > a {
     margin: 0;
 }
 
+.sidebar.sidebar-category {
+    padding: 20px;
+    border: 1px solid #DDD;
+}
 
+.sidebar.sidebar-category li {
+    border-bottom: 1px solid #f1f1f1;
+}
 
-
-
-
-
+@media(min-width: 760px){
+    .sidebar.sidebar-category{
+        min-height: 400px;
+    }
+}
 /* ************************
             MENU
 ************************** */
