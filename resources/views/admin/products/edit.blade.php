@@ -23,8 +23,8 @@
                                         <div class="col-md-8">
                                             <h2>{{ ucfirst($product->name) }}</h2>
                                             <div class="form-group">
-                                                <label for="sku">SKU <span class="text-danger">*</span></label>
-                                                <input type="text" name="sku" id="sku" placeholder="123" class="form-control" value="{!! $product->sku !!}">
+                                                <!-- <label for="sku">SKU <span class="text-danger">*</span></label> -->
+                                                <input type="hidden" name="sku" id="sku" placeholder="123" class="form-control" value="0">
                                             </div>
                                             <div class="form-group">
                                                 <label for="name">Nome <span class="text-danger">*</span></label>
@@ -51,7 +51,7 @@
                                                     <div class="col-md-3">
                                                         <div class="row">
                                                             <img src="{{ asset("storage/$image->src") }}" alt="" class="img-responsive img-thumbnail"> <br /> <br>
-                                                            <a onclick="return confirm('Are you sure?')" href="{{ route('admin.product.remove.thumb', ['src' => $image->src]) }}" class="btn btn-danger btn-sm btn-block">Remover?</a><br />
+                                                            <a onclick="return confirm('Tem certeza?')" href="{{ route('admin.product.remove.thumb', ['src' => $image->src]) }}" class="btn btn-danger btn-sm btn-block">Remover?</a><br />
                                                         </div>
                                                     </div>
                                                 @endforeach
@@ -120,7 +120,13 @@
                                             <!-- /.box-body -->
                                         </div>
                                         <div class="col-md-4">
-                                            <div class="fb-share-button" data-href="{{ route('front.get.product', str_slug($product->slug)) }}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('front.get.product', str_slug($product->slug)) }}" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+                                            <div class="fb-share-button" data-href="{{ route('front.get.product', str_slug($product->slug)) }}" data-layout="button_count" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ route('front.get.product', str_slug($product->slug)) }}" class="fb-xfbml-parse-ignore">Compartilhar</a>                                    
+                                            </div>
+                                            <div class="block" style="margin-top: 10px;">
+                                             <a class="twitter-share-button"
+                                              href="https://twitter.com/intent/tweet?url={{ route('front.get.product', str_slug($product->slug)) }}">
+                                            Tweet</a>
+                                            </div>
                                             <h2>Categoria</h2>
                                             @include('admin.shared.categories', ['categories' => $categories, 'ids' => $product])
                                         </div>
@@ -181,6 +187,23 @@
     </style>
 @endsection
 @section('js')
+    <script>window.twttr = (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function(f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+    </script>
     <script type="text/javascript">
         function backToInfoTab() {
             $('#tablist > li:first-child').addClass('active');
