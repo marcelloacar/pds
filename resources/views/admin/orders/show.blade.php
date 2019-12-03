@@ -38,7 +38,7 @@
                         <td>{{ date('M d, Y h:i a', strtotime($order['created_at'])) }}</td>
                         <td><a href="{{ route('admin.customers.show', $customer->id) }}">{{ $customer->name }}</a></td>
                         <td><strong>{{ $order['payment'] }}</strong></td>
-                        <td><button type="button" class="btn btn-info btn-block">{{ $currentStatus->name }}</button></td>
+                        <td><button type="button" class="btn btn-info btn-block">{{ $currentStatus->label }}</button></td>
                     </tr>
                     </tbody>
                     <tbody>

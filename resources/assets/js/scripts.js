@@ -10,15 +10,15 @@ $(document).ready(function () {
     $('.select2').select2({
         placeholder: 'Select'
     });
-    $('.table').DataTable({
-        'info' : false,
-        'paging' : false,
-        'searching' : false,
-        'columnDefs' : [
-            {
-                'orderable': false, 'targets' : -1
-            }
-        ],
-        'sorting' : []
-    });
+    // $('.table').DataTable({
+    //     'info' : false,
+    //     'paging' : false,
+    //     'searching' : false,
+    //     'columnDefs' : [
+    //         {
+    //             'orderable': false, 'targets' : -1
+    //         }
+    //     ],
+    //     'sorting' : []
+    // });
 });

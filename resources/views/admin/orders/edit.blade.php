@@ -47,10 +47,10 @@
                                 <div class="input-group">
                                     <select name="order_status_id" id="order_status_id" class="form-control select2">
                                         @foreach($statuses as $status)
-                                            <option @if($currentStatus->id == $status->id) selected="selected" @endif value="{{ $status->id }}">{{ $status->name }}</option>
+                                            <option @if($currentStatus->id == $status->id) selected="selected" @endif value="{{ $status->id }}">{{ $status->label }}</option>
                                         @endforeach
                                     </select>
-                                    <span class="input-group-btn"><button onclick="return confirm('Are you sure?')" type="submit" class="btn btn-primary">atualizar</button></span>
+                                    <span class="input-group-btn"><button onclick="return confirm('Tem certeza?')" type="submit" class="btn btn-primary">Atualizar</button></span>
                                 </div>
                             </form>
                         </td>
