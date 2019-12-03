@@ -109,7 +109,7 @@
                         <h4> <i class="fa fa-gift"></i> Itens</h4>
                         <table class="table">
                             <thead>
-                            <th class="col-md-2">SKU</th>
+                            <!-- <th class="col-md-2">SKU</th> -->
                             <th class="col-md-2">Nome</th>
                             <th class="col-md-2">Descrição</th>
                             <th class="col-md-2">Quantidade</th>
@@ -118,7 +118,7 @@
                             <tbody>
                             @foreach($items as $item)
                                 <tr>
-                                    <td>{{ $item->sku }}</td>
+                                    <!-- <td>{{ $item->sku }}</td> -->
                                     <td>{{ $item->nome }}</td>
                                     <td>{!! $item->descrição !!}</td>
                                     <td>{{ $item->pivot->quantidade }}</td>
