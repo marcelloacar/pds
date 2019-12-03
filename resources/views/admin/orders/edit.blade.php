@@ -16,7 +16,7 @@
                         </h2>
                     </div>
                     <div class="col-md-3 col-md-offset-3">
-                        <h2><a href="{{route('admin.orders.invoice.generate', $order['id'])}}" class="btn btn-primary btn-block">Baixar pdf</a></h2>
+                       <!--  <h2><a href="{{route('admin.orders.invoice.generate', $order['id'])}}" class="btn btn-primary btn-block">Baixar pdf</a></h2> -->
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 @endif
                 <div class="box-body">
                     <div class="row">
-                        <div class="col-md-6">
+     <!--                    <div class="col-md-6">
                             <h4> <i class="fa fa-truck"></i> Frete</h4>
                             <table class="table">
                                 <thead>
@@ -147,8 +147,8 @@
                                 </tr>
                                 </tbody>
                             </table>
-                        </div>
-                        <div class="col-md-6">
+                        </div> -->
+                        <div class="col-md-12">
                             <h4> <i class="fa fa-map-marker"></i> Endereço</h4>
                             <table class="table">
                                 <thead>

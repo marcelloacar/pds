@@ -16,7 +16,7 @@
                         </h2>
                     </div>
                     <div class="col-md-3 col-md-offset-3">
-                        <h2><a href="{{route('admin.orders.invoice.generate', $order['id'])}}" class="btn btn-primary btn-block">Baixar pdf</a></h2>
+                        <!-- <h2><a href="{{route('admin.orders.invoice.generate', $order['id'])}}" class="btn btn-primary btn-block">Baixar pdf</a></h2> -->
                     </div>
                 </div>
             </div>
