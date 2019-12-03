@@ -50,7 +50,7 @@
                                                 @foreach($images as $image)
                                                     <div class="col-md-3">
                                                         <div class="row">
-                                                            <img src="{{ asset("storage/$image->src") }}" alt="" class="img-responsive img-thumbnail"> <br /> <br>
+                                                            <img src="{{ $image->src }}" alt="" class="img-responsive img-thumbnail"> <br /> <br>
                                                             <a onclick="return confirm('Tem certeza?')" href="{{ route('admin.product.remove.thumb', ['src' => $image->src]) }}" class="btn btn-danger btn-sm btn-block">Remover?</a><br />
                                                         </div>
                                                     </div>

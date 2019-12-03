@@ -135,6 +135,25 @@ ul.navbar-nav > li.active > a {
         min-height: 400px;
     }
 }
+
+.offer {
+    margin-top: 20px;
+}
+
+.owl-offer {
+    width: 100%;
+}
+
+.owl-offer .item {
+    width: 100%;
+    min-height: 210px;
+    display: inline-block;
+}
+
+.owl-offer .item .description {
+    line-height: 18px;
+}
+
 /* ************************
             MENU
 ************************** */
@@ -149,6 +168,18 @@ ul.navbar-nav > li.active > a {
 .navbar-default {
     background-color: transparent !important;
     border: none;
+}
+
+.navbar-brand img {
+    width: 100px;
+    margin-top: -60px;
+}
+
+@media(max-width: 760px){
+    .navbar-brand img {
+        width: 60px;
+        margin-top: -20px;
+    }
 }
 
 ul.navbar-nav li a{

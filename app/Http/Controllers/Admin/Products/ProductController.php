@@ -315,7 +315,7 @@ class ProductController extends Controller
     public function removeThumbnail(Request $request)
     {
         $this->productRepo->deleteThumb($request->input('src'));
-        return redirect()->back()->with('message', 'Imagem removida com sucesso');
+        //return redirect()->back()->with('message', 'Imagem removida com sucesso');
     }
 
     /**

@@ -168,8 +168,11 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
      * @return bool
      */
     public function deleteThumb(string $src) : bool
-    {
-        return DB::table('product_images')->where('src', $src)->delete();
+    {   
+        $exploded = explode('/',$src);
+        $src = end($exploded);
+
+        return DB::table('product_images')->whereRaw("src like '%" . $src . "'")->delete();
     }
 
     /**
@@ -227,7 +230,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     public function saveProductImages(Collection $collection)
     {
         $collection->each(function (UploadedFile $file) {
-            $filename = $this->store(env('AWS_ROOT_FOLDER') . '/public/products');
+            $filename = $file->store(env('AWS_ROOT_FOLDER') . '/public/products');
             $productImage = new ProductImage([
                 'product_id' => $this->model->id,
                 'src' => $filename

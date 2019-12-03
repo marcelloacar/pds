@@ -38,6 +38,10 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
                 Route::resource('customers', 'CustomerController');
                 Route::resource('customers.addresses', 'CustomerAddressController');
             });
+            Route::namespace('Offers')->group(function () {
+                Route::resource('offers', 'OfferController');
+                Route::get('remove-image-offer', 'OfferController@removeImage')->name('offer.remove.image');
+            });
             Route::namespace('Categories')->group(function () {
                 Route::resource('categories', 'CategoryController');
                 Route::get('remove-image-category', 'CategoryController@removeImage')->name('category.remove.image');

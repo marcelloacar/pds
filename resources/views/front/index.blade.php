@@ -10,6 +10,7 @@
     <div class="container">
         <div class="col-md-3">
             @include('front.categories.sidebar-category', ['categories_list' => $categories_list])
+            @include('front.offers', ['offers' => []])
         </div>
         <div class="col-md-9">
             <div class="row">

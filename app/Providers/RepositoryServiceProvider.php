@@ -30,6 +30,8 @@ use App\Shop\OrderStatuses\Repositories\Interfaces\OrderStatusRepositoryInterfac
 use App\Shop\OrderStatuses\Repositories\OrderStatusRepository;
 use App\Shop\Permissions\Repositories\PermissionRepository;
 use App\Shop\Permissions\Repositories\Interfaces\PermissionRepositoryInterface;
+use App\Shop\Offers\Repositories\OfferRepository;
+use App\Shop\Offers\Repositories\Interfaces\OfferRepositoryInterface;
 use App\Shop\ProductAttributes\Repositories\ProductAttributeRepository;
 use App\Shop\ProductAttributes\Repositories\ProductAttributeRepositoryInterface;
 use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
@@ -146,6 +148,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             PermissionRepositoryInterface::class,
             PermissionRepository::class
+        );
+
+        $this->app->bind(
+            OfferRepositoryInterface::class,
+            OfferRepository::class
         );
     }
 }

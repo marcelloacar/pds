@@ -41,9 +41,7 @@ mix
             'node_modules/font-awesome/css/font-awesome.css',
             'node_modules/select2/dist/css/select2.css',
             'resources/assets/css/drift-basic.min.css',
-            'resources/assets/css/front.css',
-            'resources/assets/css/theme.css'
-
+            'resources/assets/css/front.css'
         ],
         'public/css/style.min.css'
     )
@@ -61,7 +59,9 @@ mix
     .copyDirectory('resources/assets/admin-lte/img', 'public/img')
     .copyDirectory('resources/assets/images', 'public/images')
     .copy('resources/assets/js/scripts.js', 'public/js/scripts.js')
-    .copy('resources/assets/js/custom.js', 'public/js/custom.js');
+    .copy('resources/assets/js/custom.js', 'public/js/custom.js')
+    .copy('resources/assets/css/owlcarousel.min.css', 'public/css/owlcarousel.min.css');
+
 
 /*
 |-----------------------------------------------------------------------
