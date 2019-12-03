@@ -132,7 +132,7 @@ ul.navbar-nav > li.active > a {
 
 @media(min-width: 760px){
     .sidebar.sidebar-category{
-        min-height: 400px;
+        /*min-height: 400px;*/
     }
 }
 
