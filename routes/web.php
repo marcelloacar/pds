@@ -42,6 +42,12 @@ Route::group(['prefix' => 'admin', 'middleware' => ['employee'], 'as' => 'admin.
                 Route::resource('offers', 'OfferController');
                 Route::get('remove-image-offer', 'OfferController@removeImage')->name('offer.remove.image');
             });
+
+            Route::namespace('Posts')->group(function () {
+                Route::resource('posts', 'PostController');
+                Route::get('remove-image-post', 'PostController@removeImage')->name('post.remove.image');
+            });
+
             Route::namespace('Categories')->group(function () {
                 Route::resource('categories', 'CategoryController');
                 Route::get('remove-image-category', 'CategoryController@removeImage')->name('category.remove.image');
@@ -108,6 +114,9 @@ Route::namespace('Front')->group(function () {
     });
     Route::resource('cart', 'CartController');
     Route::get("category/{slug}", 'CategoryController@getCategory')->name('front.category.slug');
+    Route::get("post/{slug}", 'PostController@getPost')->name('front.post.slug');
+    Route::get("posts", 'PostController@getPosts')->name('front.post.list');
+
     Route::get("search", 'ProductController@search')->name('search.product');
     Route::get("{product}", 'ProductController@show')->name('front.get.product');
 });

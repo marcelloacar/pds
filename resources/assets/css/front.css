@@ -154,6 +154,16 @@ ul.navbar-nav > li.active > a {
     line-height: 18px;
 }
 
+
+.post-text {
+    font-size: 15px;
+    line-height: 25px;
+    color: #898989;
+    margin-top: 10px;
+    text-align: left;
+    white-space: normal;
+}
+
 /* ************************
             MENU
 ************************** */

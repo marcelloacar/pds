@@ -5,7 +5,7 @@
     <section class="content">
     @include('layouts.errors-and-messages')
     <!-- Default box -->
-        @if($offers)
+        @if($posts)
             <div class="box">
                 <div class="box-body">
                     <h2>Anúncios</h2>
@@ -19,22 +19,22 @@
                             </tr>
                         </thead>
                         <tbody>
-                        @foreach ($offers as $offer)
+                        @foreach ($posts as $post)
                             <tr>
                                 <td>
-                                    <a href="{{ route('admin.offers.show', $offer->id) }}">{{ $offer->name }}</a></td>
+                                    <a href="{{ route('admin.posts.show', $post->id) }}">{{ $post->name }}</a></td>
                                 <td>
-                                    @if(isset($offer->cover))
-                                        <img src="{{ $offer->cover }}" alt="" class="img-responsive">
+                                    @if(isset($post->cover))
+                                        <img src="{{ $post->cover }}" alt="" class="img-responsive">
                                     @endif
                                 </td>
-                                <td>@include('layouts.status', ['status' => $offer->status])</td>
+                                <td>@include('layouts.status', ['status' => $post->status])</td>
                                 <td>
-                                    <form action="{{ route('admin.offers.destroy', $offer->id) }}" method="post" class="form-horizontal">
+                                    <form action="{{ route('admin.posts.destroy', $post->id) }}" method="post" class="form-horizontal">
                                         {{ csrf_field() }}
                                         <input type="hidden" name="_method" value="delete">
                                         <div class="btn-group">
-                                            <a href="{{ route('admin.offers.edit', $offer->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
+                                            <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-primary btn-sm"><i class="fa fa-edit"></i> Editar</a>
                                             <button onclick="return confirm('Tem certeza?')" type="submit" class="btn btn-danger btn-sm"><i class="fa fa-times"></i> Apagar</button>
                                         </div>
                                     </form>
@@ -43,7 +43,7 @@
                         @endforeach
                         </tbody>
                     </table>
-                    {{ $offers->links() }}
+                    {{ $posts->links() }}
                 </div>
                 <!-- /.box-body -->
             </div>

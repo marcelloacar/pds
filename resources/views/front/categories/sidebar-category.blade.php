@@ -1,6 +1,7 @@
 <div class="sidebar sidebar-category">
 	<h4> Categorias </h4>
 	<ul class="nav sidebar-menu">
+		<li @if(request()->segment(1) == "posts") class="active" @endif><a href="{{ route('front.post.list') }}">Postagens</a></li>
 	    @foreach($categories_list as $category)
 	        @if($category->children()->count() > 0)
 	            <li>@include('layouts.front.category-sidebar-sub', ['subs' => $category->children])</li>

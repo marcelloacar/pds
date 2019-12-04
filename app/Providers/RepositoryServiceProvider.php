@@ -32,6 +32,8 @@ use App\Shop\Permissions\Repositories\PermissionRepository;
 use App\Shop\Permissions\Repositories\Interfaces\PermissionRepositoryInterface;
 use App\Shop\Offers\Repositories\OfferRepository;
 use App\Shop\Offers\Repositories\Interfaces\OfferRepositoryInterface;
+use App\Shop\Posts\Repositories\PostRepository;
+use App\Shop\Posts\Repositories\Interfaces\PostRepositoryInterface;
 use App\Shop\ProductAttributes\Repositories\ProductAttributeRepository;
 use App\Shop\ProductAttributes\Repositories\ProductAttributeRepositoryInterface;
 use App\Shop\Products\Repositories\Interfaces\ProductRepositoryInterface;
@@ -153,6 +155,11 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             OfferRepositoryInterface::class,
             OfferRepository::class
+        );
+
+        $this->app->bind(
+            PostRepositoryInterface::class,
+            PostRepository::class
         );
     }
 }
