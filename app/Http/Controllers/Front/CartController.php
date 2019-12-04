@@ -136,7 +136,7 @@ class CartController extends Controller
 
         $product = $this->productRepo->findProductById($product_id);
 
-        if($product->quatity < $request->input('quantity')){
+        if($product->quantity < $request->input('quantity')){
             request()->session()->flash('error', 'Quantidade selecionada esta indisponível');
             return redirect()->route('cart.index');
         }

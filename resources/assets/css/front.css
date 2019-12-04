@@ -169,6 +169,10 @@ ul.navbar-nav > li.active > a {
     white-space: normal;
 }
 
+.post .img-responsive {
+    max-width: 100%;
+    max-height: 190px;
+}
 /* ************************
             MENU
 ************************** */

@@ -16,7 +16,7 @@
             @if(!empty($posts) && !collect($posts)->isEmpty())
                 <ul class="row text-center list-unstyled">
                 @foreach($posts as $post)
-                        <li class="col-md-6 col-sm-6 col-xs-12 post-list">
+                        <li class="col-md-4 col-sm-6 col-xs-12 post-list">
                             <div class="single-post">
                                 <a class="btn btn-default" href="{{ route('front.post.slug', str_slug($post->slug)) }}"> 
                                     <div class="post">                                   

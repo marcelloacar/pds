@@ -14,16 +14,16 @@
                         <input type="text" name="alias" id="alias" placeholder="Casa ou Trabalho" class="form-control" value="{{ old('alias') }}">
                     </div>
                     <div class="form-group">
-                        <label for="address_1">Endereço 1 <span class="text-danger">*</span></label>
-                        <input type="text" name="address_1" id="address_1" placeholder="Endereço 1" class="form-control" value="{{ old('address_1') }}">
+                        <label for="address_1">Endereço<span class="text-danger">*</span></label>
+                        <input type="text" name="address_1" id="address_1" placeholder="Endereço" class="form-control" value="{{ old('address_1') }}">
                     </div>
                     <div class="form-group">
                         <label for="city">Cidade </label>
                         <input type="text" name="city" id="city" placeholder="Cidade" class="form-control" value="{{ old('city') }}">
                     </div>
                     <div class="form-group">
-                        <label for="state_code">Estado </label>
-                        <input type="text" name="state_code" id="state_code" placeholder="Estadp" class="form-control" value="{{ old('state_code') }}">
+                        <label for="state_code">Estado</label>
+                        <input type="text" name="state_code" id="state_code" placeholder="Estado" class="form-control" value="{{ old('state_code') }}">
                     </div>
                     <div class="form-group">
                         <label for="country_id">Pais </label>
