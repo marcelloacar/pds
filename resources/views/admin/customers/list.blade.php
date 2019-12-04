@@ -9,7 +9,7 @@
         @if($customers)
             <div class="box">
                 <div class="box-body">
-                    <h2>Customers</h2>
+                    <h2>Clientes</h2>
                     @include('layouts.search', ['route' => route('admin.customers.index')])
                     <table class="table">
                         <thead>

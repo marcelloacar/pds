@@ -11,7 +11,7 @@
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td class="col-md-1">Alias</td>
+                        <td class="col-md-1">Apelido</td>
                         <td class="col-md-2">Address 1</td>
                         <td class="col-md-2">Address 2</td>
                         <td class="col-md-2">City</td>

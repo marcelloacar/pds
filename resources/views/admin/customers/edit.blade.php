@@ -27,15 +27,15 @@
                     <div class="form-group">
                         <label for="status">Status </label>
                         <select name="status" id="status" class="form-control">
-                            <option value="0" @if($customer->status == 0) selected="selected" @endif>Disable</option>
-                            <option value="1" @if($customer->status == 1) selected="selected" @endif>Enable</option>
+                            <option value="0" @if($customer->status == 0) selected="selected" @endif>Inativo</option>
+                            <option value="1" @if($customer->status == 1) selected="selected" @endif>Ativo</option>
                         </select>
                     </div>
                 </div>
                 <!-- /.box-body -->
                 <div class="box-footer">
                     <div class="btn-group">
-                        <a href="{{ route('admin.customers.index') }}" class="btn btn-default btn-sm">Back</a>
+                        <a href="{{ route('admin.customers.index') }}" class="btn btn-default btn-sm">Voltar</a>
                         <button type="submit" class="btn btn-primary btn-sm">Atualizar</button>
                     </div>
                 </div>

@@ -9,15 +9,15 @@
 return [
     "admin" => [
         'products' => [
-            'name' => 'Products',
+            'name' => 'Produtos',
             'icon' => 'fa fa-gift'
         ],
         'categories' => [
-            'name' => 'Categories',
+            'name' => 'Categorias',
             'icon' => "fa fa-folder"
         ],
         "orders" => [
-            "name" => "Orders",
+            "name" => "Pedidos",
             "icon" => "fa fa-money"
         ],
         "dashboard" => [

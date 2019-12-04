@@ -26,13 +26,13 @@
                 </table>
             </div>
             <div class="box-body">
-                <h2>Addresses</h2>
+                <h2>Endereços</h2>
                 <table class="table">
                     <tbody>
                     <tr>
                         <td class="col-md-2">Apelido</td>
-                        <td class="col-md-2">Endereço 1</td>
-                        <td class="col-md-2">país</td>
+                        <td class="col-md-2">Endereço</td>
+                        <td class="col-md-2">Cidade</td>
                         <td class="col-md-2">Status</td>
                         <td class="col-md-4">Ações</td>
                     </tr>
@@ -42,7 +42,7 @@
                         <tr>
                             <td>{{ $address->alias }}</td>
                             <td>{{ $address->address_1 }}</td>
-                            <td>{{ $address->country->name }}</td>
+                            <td>{{ $address->city }}</td>
                             <td>@include('layouts.status', ['status' => $address->status])</td>
                             <td>
                                 <form action="{{ route('admin.addresses.destroy', $address->id) }}" method="post" class="form-horizontal">

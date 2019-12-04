@@ -19,12 +19,16 @@
                         <input type="text" name="alias" id="alias" placeholder="Home or Office" class="form-control" value="{{ old('alias') ?? $address->alias }}">
                     </div>
                     <div class="form-group">
-                        <label for="address_1">Endereço 1 <span class="text-danger">*</span></label>
-                        <input type="text" name="address_1" id="address_1" placeholder="Endereço 1" class="form-control" value="{{ old('address_1') ?? $address->address_1 }}">
+                        <label for="address_1">Endereço <span class="text-danger">*</span></label>
+                        <input type="text" name="address_1" id="address_1" placeholder="Endereço" class="form-control" value="{{ old('address_1') ?? $address->address_1 }}">
                     </div>
                     <div class="form-group">
-                        <label for="address_2">Endereço 2 </label>
-                        <input type="text" name="address_2" id="address_2" placeholder="Endereço 2" class="form-control" value="{{ old('address_2') ?? $address->address_2 }}">
+                        <label for="city">Cidade </label>
+                        <input type="text" name="city" id="city" placeholder="Cidade" class="form-control" value="{{ old('city') ?? $address->city }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="state_code">Estado </label>
+                        <input type="text" name="state_code" id="state_code" placeholder="Estado" class="form-control" value="{{ old('state_code') ?? $address->state_code }}">
                     </div>
                     <div class="form-group">
                         <label for="country_id">Pais </label>

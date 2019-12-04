@@ -7,16 +7,16 @@
     <!-- Default box -->
         <div class="box">
             <div class="box-body">
-                <h2>Addresses</h2>
+                <h2>Endereços</h2>
                 <table class="table">
                     <tbody>
                     <tr>
-                        <td class="col-md-1">Alias</td>
-                        <td class="col-md-2">Address 1</td>
-                        <td class="col-md-2">Address 2</td>
-                        <td class="col-md-2">City</td>
-                        <td class="col-md-2">Country</td>
-                        <td class="col-md-2">Zip</td>
+                        <td class="col-md-1">Apelido</td>
+                        <td class="col-md-2">Endereço</td>
+                        <td class="col-md-2">Estado</td>
+                        <td class="col-md-2">Cidade</td>
+                        <td class="col-md-2">País</td>
+                        <td class="col-md-2">CEP</td>
                         <td class="col-md-1">Status</td>
                     </tr>
                     </tbody>
@@ -24,7 +24,7 @@
                     <tr>
                         <td>{{ $address->alias }}</td>
                         <td>{{ $address->address_1 }}</td>
-                        <td>{{ $address->address_2 }}</td>
+                        <td>{{ $address->state_code }}</td>
                         <td>
                             @if(isset($address->city))
                                 {{ $address->city }}
@@ -40,7 +40,7 @@
             <!-- /.box-body -->
             <div class="box-footer">
                 <div class="btn-group">
-                    <a href="{{ route('admin.customers.show', $customerId) }}" class="btn btn-default btn-sm">Back</a>
+                    <a href="{{ route('admin.customers.show', $customerId) }}" class="btn btn-default btn-sm">Voltar</a>
                 </div>
             </div>
         </div>

@@ -14,10 +14,7 @@
                         <tbody>
                         <tr>
                             <td>Apelido</td>
-                            <td>Endereço 1</td>
-                            @if(isset($address->province))
-                            <td>Province</td>
-                            @endif
+                            <td>Endereço</td>
                             <td>Estado</td>
                             <td>Cidade</td>
                             <td>CEP</td>
@@ -31,9 +28,6 @@
                             <tr>
                                 <td><a href="{{ route('admin.customers.show', $customer->id) }}">{{ $address->alias }}</a></td>
                                 <td>{{ $address->address_1 }}</td>
-                                @if(isset($address->province))
-                                <td>{{ $address->province->name }}</td>
-                                @endif
                                 <td>{{ $address->state_code }}</td>
                                 <td>{{ $address->city }}</td>
                                 <td>{{ $address->zip }}</td>

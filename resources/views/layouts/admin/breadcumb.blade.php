@@ -3,7 +3,7 @@
         Dashboard
         <small>Painel de Controle</small>
     </h1>
-    <ol class="breadcrumb">
+   <!--  <ol class="breadcrumb">
         @foreach($breadcumbs as $breadcumb)
             @if($loop->last)
                 <li><a href="#" class="active">@if(isset($breadcumb["icon"]))<i
@@ -13,5 +13,5 @@
                                 class="{{$breadcumb["icon"]}}"></i> @endif {{$breadcumb["name"]}}</a></li>
             @endif
         @endforeach
-    </ol>
+    </ol> -->
 </section>

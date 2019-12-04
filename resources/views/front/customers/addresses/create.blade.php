@@ -18,8 +18,12 @@
                         <input type="text" name="address_1" id="address_1" placeholder="Endereço 1" class="form-control" value="{{ old('address_1') }}">
                     </div>
                     <div class="form-group">
-                        <label for="address_2">Endereço 2 </label>
-                        <input type="text" name="address_2" id="address_2" placeholder="Endereço 2" class="form-control" value="{{ old('address_2') }}">
+                        <label for="city">Cidade </label>
+                        <input type="text" name="city" id="city" placeholder="Cidade" class="form-control" value="{{ old('city') }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="state_code">Estado </label>
+                        <input type="text" name="state_code" id="state_code" placeholder="Estadp" class="form-control" value="{{ old('state_code') }}">
                     </div>
                     <div class="form-group">
                         <label for="country_id">Pais </label>
