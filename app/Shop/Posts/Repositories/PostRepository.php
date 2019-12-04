@@ -61,9 +61,11 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
             if (isset($params['cover']) && ($params['cover'] instanceof UploadedFile)) {
                 $cover = $this->uploadOne($params['cover'], env('AWS_ROOT_FOLDER') . '/public/posts');
-            }
+             $merge = $collection->merge(compact('slug', 'cover'));
 
-            $merge = $collection->merge(compact('slug', 'cover'));
+            } else {
+                $merge = $collection->merge(compact('slug'));
+            }
 
             $post = new Post($merge->all());
 
@@ -91,9 +93,11 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
 
         if (isset($params['cover']) && ($params['cover'] instanceof UploadedFile)) {
             $cover = $this->uploadOne($params['cover'], env('AWS_ROOT_FOLDER') . '/public/posts');
+            $merge = $collection->merge(compact('slug', 'cover'));
+        } else {
+            $merge = $collection->merge(compact('slug'));
         }
 
-        $merge = $collection->merge(compact('slug', 'cover'));
         $post->save();
         $post->update($merge->all());
         

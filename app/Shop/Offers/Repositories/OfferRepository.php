@@ -60,10 +60,12 @@ class OfferRepository extends BaseRepository implements OfferRepositoryInterface
             }
 
             if (isset($params['cover']) && ($params['cover'] instanceof UploadedFile)) {
-                $cover = $this->uploadOne($params['cover'], env('AWS_ROOT_FOLDER') . '/public/posts');
-            }
+                $cover = $this->uploadOne($params['cover'], env('AWS_ROOT_FOLDER') . '/public/offers');
+                   $merge = $collection->merge(compact('slug', 'cover'));
 
-            $merge = $collection->merge(compact('slug', 'cover'));
+            } else {
+                $merge = $collection->merge(compact('slug'));
+            }
 
             $offer = new Offer($merge->all());
 
@@ -91,9 +93,12 @@ class OfferRepository extends BaseRepository implements OfferRepositoryInterface
 
         if (isset($params['cover']) && ($params['cover'] instanceof UploadedFile)) {
             $cover = $this->uploadOne($params['cover'], env('AWS_ROOT_FOLDER') . '/public/offers');
+            $merge = $collection->merge(compact('slug', 'cover'));
+
+        } else {
+            $merge = $collection->merge(compact('slug'));
         }
 
-        $merge = $collection->merge(compact('slug', 'cover'));
         $offer->save();
         $offer->update($merge->all());
         
