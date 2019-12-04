@@ -7,6 +7,7 @@
         <div class="col-md-12">@include('layouts.errors-and-messages')</div>
         <div class="col-md-4 col-md-offset-4">
             <h2>Entrar</h2>
+            @if(strpos(request()->getSchemeAndHttpHost(), "localhost"))
             <form action="{{ route('login') }}" method="post" class="form-horizontal">
                 {{ csrf_field() }}
                 <div class="form-group">
@@ -26,6 +27,7 @@
                 <a href="{{route('password.request')}}">Esqueci minha senha</a><br>
                 <a href="{{route('register')}}" class="text-center">Não possui conta? Crie a sua agora.</a>
             </div>
+            @endif
             <div class="col-md-8 offset-md-4">
                 <a href="{{ url('/auth/redirect/facebook') }}" class="btn btn-primary"><i class="fa fa-facebook"></i> Facebook</a>
             </div>

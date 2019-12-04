@@ -53,7 +53,7 @@
             <!-- /.social-auth-links -->
 
             <!-- <a href="#">I forgot my password</a><br> -->
-            <a href="{{ url('/register') }}" class="text-center">Cadastrar</a>
+            <!-- <a href="{{ url('/register') }}" class="text-center">Cadastrar</a> -->
 
         </div>
         <!-- /.login-box-body -->

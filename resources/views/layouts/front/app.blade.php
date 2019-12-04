@@ -51,7 +51,7 @@
                         <li><a href="{{ route('logout') }}"><i class="fa fa-sign-out"></i> Sair</a></li>
                     @else
                         <li><a href="{{ route('login') }}"> <i class="fa fa-lock"></i> Entrar</a></li>
-                        <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Registrar</a></li>
+                        <!-- <li><a href="{{ route('register') }}"> <i class="fa fa-sign-in"></i> Registrar</a></li> -->
                     @endif
                     <li id="cart" class="menubar-cart">
                         <a href="{{ route('cart.index') }}" title="Visualizar Carrinho" class="awemenu-icon menu-shopping-cart">
