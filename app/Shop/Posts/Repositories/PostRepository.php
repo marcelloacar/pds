@@ -41,6 +41,19 @@ class PostRepository extends BaseRepository implements PostRepositoryInterface
     }
 
     /**
+     * List all active posts
+     *
+     * @param string $order
+     * @param string $sort
+     * @param array $except
+     * @return \Illuminate\Support\Collection
+     */
+    public function listActivePosts(string $order = 'id', string $sort = 'desc', $except = []) : Collection
+    {
+        return $this->model->where("status", 1)->orderBy($order, $sort)->get()->except($except);
+    }
+
+    /**
      * Create the post
      *
      * @param array $params

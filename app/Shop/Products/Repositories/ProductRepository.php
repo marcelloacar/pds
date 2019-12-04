@@ -35,7 +35,7 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
     }
 
     /**
-     * List all the products
+     * List active the products
      *
      * @param string $order
      * @param string $sort
@@ -43,6 +43,19 @@ class ProductRepository extends BaseRepository implements ProductRepositoryInter
      * @return Collection
      */
     public function listProducts(string $order = 'id', string $sort = 'desc', array $columns = ['*']) : Collection
+    {
+        return $this->all($columns, $order, $sort);
+    }
+
+    /**
+     * List all products
+     *
+     * @param string $order
+     * @param string $sort
+     * @param array $columns
+     * @return Collection
+     */
+    public function listAllProducts(string $order = 'id', string $sort = 'desc', array $columns = ['*']) : Collection
     {
         return $this->all($columns, $order, $sort);
     }

@@ -68,6 +68,7 @@
                                 </select>
                             </div><hr>
                         @endif
+                        @if($product->quantity > 0)
                         <div class="form-group">
                             <input type="text"
                                    class="form-control"
@@ -79,6 +80,9 @@
                         </div>
                         <button type="submit" class="btn btn-warning"><i class="fa fa-cart-plus"></i> Adicionar no Carrinho
                         </button>
+                        @else
+                        <b> Produto indisponível </b>
+                        @endif
                     </form>
                 </div>
             </div>

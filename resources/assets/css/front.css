@@ -73,6 +73,11 @@ a:hover {
     text-decoration: none;
 }
 
+.page-title {
+    font-size: 30px;
+    line-height: 10px;
+}
+
 .btn.focus, .btn:focus, .btn:hover {
     text-decoration: none;
 }
@@ -335,8 +340,15 @@ li.menubar-cart a {
 .product {
     position: relative;
     width: 100%;
+    min-height: 190px;
     margin-bottom: 15px;
 }
+
+.product .img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+}
+
 .single-product:hover .product-overlay {
     opacity: 1;
     border-radius: 3px;
@@ -617,10 +629,6 @@ textarea, select {
 .product h1 > small {
     padding-top: 20px;
     display: block;
-}
-
-a:hover img {
-    border: 1px solid #d89522;
 }
 
 .customer-order-list .tab-pane {

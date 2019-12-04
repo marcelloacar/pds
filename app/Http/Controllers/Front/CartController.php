@@ -109,10 +109,16 @@ class CartController extends Controller
             $options['combination'] = $attr->attributesValues->toArray();
         }
 
-        $this->cartRepo->addToCart($product, $request->input('quantity'), $options);
+        if($request->input('quantity') <= $product->quantity){
+            $this->cartRepo->addToCart($product, $request->input('quantity'), $options);
 
-        return redirect()->route('cart.index')
-            ->with('message', 'Adicionado ao Carrinho com sucesso');
+            return redirect()->route('cart.index')
+                ->with('message', 'Adicionado ao Carrinho com sucesso');
+        } else {
+            return redirect()->back()->with('error', 'Quantidade selecionada esta indisponível');
+        }
+
+
     }
 
     /**
@@ -124,8 +130,18 @@ class CartController extends Controller
      */
     public function update(UpdateCartRequest $request, $id)
     {
-        $this->cartRepo->updateQuantityInCart($id, $request->input('quantity'));
 
+        $item = $this->cartRepo->findItem($id);
+        $product_id = $item->id;
+
+        $product = $this->productRepo->findProductById($product_id);
+
+        if($product->quatity < $request->input('quantity')){
+            request()->session()->flash('error', 'Quantidade selecionada esta indisponível');
+            return redirect()->route('cart.index');
+        }
+
+        $this->cartRepo->updateQuantityInCart($id, $request->input('quantity'));
         request()->session()->flash('message', 'Carrinho atualizado com sucesso');
         return redirect()->route('cart.index');
     }

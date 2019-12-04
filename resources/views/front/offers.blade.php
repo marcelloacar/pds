@@ -3,12 +3,10 @@
 		Anúncios
 		<div class="owl-offer owl-carousel owl-theme">
 		    @foreach($offers as $offer)
-		    	@if($offer->status == 1)
 		    	<div class="item">
 		    		<img src="{{$offer->cover}}"/>
 		    		<div class="description">{{$offer->name}}</div>
 		    	</div>
-		    	@endif
 		    @endforeach
 		</div>
 	</div>

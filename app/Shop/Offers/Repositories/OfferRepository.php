@@ -28,7 +28,7 @@ class OfferRepository extends BaseRepository implements OfferRepositoryInterface
     }
 
     /**
-     * List all the categories
+     * List all the offers
      *
      * @param string $order
      * @param string $sort
@@ -38,6 +38,20 @@ class OfferRepository extends BaseRepository implements OfferRepositoryInterface
     public function listOffers(string $order = 'id', string $sort = 'desc', $except = []) : Collection
     {
         return $this->model->orderBy($order, $sort)->get()->except($except);
+    }
+
+
+    /**
+     * List all active offers
+     *
+     * @param string $order
+     * @param string $sort
+     * @param array $except
+     * @return \Illuminate\Support\Collection
+     */
+    public function listActiveOffers(string $order = 'id', string $sort = 'desc', $except = []) : Collection
+    {
+        return $this->model->where("status", 1)->orderBy($order, $sort)->get()->except($except);
     }
 
     /**

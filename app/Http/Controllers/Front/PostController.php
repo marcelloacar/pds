@@ -50,8 +50,8 @@ class PostController extends Controller
 
         // $categories_list = $this->postRepo->listPosts("name", "asc");
 
-        $posts = $this->postRepo->listPosts();
-        $offers = $this->offerRepo->listOffers();
+        $posts = $this->postRepo->listActivePosts();
+        $offers = $this->offerRepo->listActiveOffers();
         $categories_list = $this->categoryRepo->listCategories("name", "asc");
 
         

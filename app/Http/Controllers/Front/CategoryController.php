@@ -43,15 +43,15 @@ class CategoryController extends Controller
 
         $repo = new CategoryRepository($category);
 
-        $products = $repo->findProducts()->where('status', 1)->all();
+        $products = $repo->findProducts()->where('status', 1)->where('quantity', '>', 0)->all();
 
         $categories_list = $this->categoryRepo->listCategories("name", "asc");
 
-        $offers = $this->offerRepo->listOffers();
+        $offers = $this->offerRepo->listActiveOffers();
         
         return view('front.categories.category', [
             'category' => $category,
-            'products' => $repo->paginateArrayResults($products, 20),
+            'products' => $products,
             'categories_list' => $categories_list,
             'offers' => $offers
         ]);

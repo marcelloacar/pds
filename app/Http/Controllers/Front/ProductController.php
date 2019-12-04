@@ -40,7 +40,7 @@ class ProductController extends Controller
             $list = $this->productRepo->listProducts();
         }
 
-        $products = $list->where('status', 1)->map(function (Product $item) {
+        $products = $list->where('status', 1)->where('quantity', '>', 0)->map(function (Product $item) {
             return $this->transformProduct($item);
         });
 

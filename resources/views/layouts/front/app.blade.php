@@ -67,16 +67,20 @@
         <nav class="navbar navbar-default">
             <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
-                <div class="navbar-header col-md-2">
+                <div class="navbar-header col-md-1">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('images/logo.jpeg') }}"></a></a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('images/logo.jpeg') }}"/></a>
+                    
                 </div>
-                <div class="col-md-10">
+                <div class="col-md-3">
+                    <div class="page-title">{{config('app.name')}}</div>
+                </div>
+                <div class="col-md-8">
                     @include('layouts.front.header-cart')
                 </div>
             </div>
